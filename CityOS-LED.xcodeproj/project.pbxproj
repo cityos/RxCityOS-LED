@@ -1,0 +1,1032 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B30E2F191CC4315100A4E74C /* LampLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E2F181CC4315100A4E74C /* LampLocation.swift */; };
+		B30E2F221CC4376500A4E74C /* Cache.h in Headers */ = {isa = PBXBuildFile; fileRef = B30E2F211CC4376500A4E74C /* Cache.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B30E2F261CC4376500A4E74C /* Cache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B30E2F1F1CC4376500A4E74C /* Cache.framework */; };
+		B30E2F271CC4376500A4E74C /* Cache.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B30E2F1F1CC4376500A4E74C /* Cache.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B30E2F321CC4378900A4E74C /* RealmLampTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E2F311CC4378900A4E74C /* RealmLampTests.swift */; };
+		B30E2F341CC4378900A4E74C /* Cache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B30E2F1F1CC4376500A4E74C /* Cache.framework */; };
+		B30E2F3A1CC437ED00A4E74C /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FF117C1CC0D0AE00C1B93E /* Realm.framework */; };
+		B30E2F3B1CC437ED00A4E74C /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FF117D1CC0D0AE00C1B93E /* RealmSwift.framework */; };
+		B30E2F3C1CC437ED00A4E74C /* CoreCityOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FF11401CBFF19100C1B93E /* CoreCityOS.framework */; };
+		B30E2F3E1CC4380E00A4E74C /* RealmLamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E2F3D1CC4380E00A4E74C /* RealmLamp.swift */; };
+		B30E2F3F1CC440D400A4E74C /* Cache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B30E2F1F1CC4376500A4E74C /* Cache.framework */; };
+		B30E2F411CC4CA1600A4E74C /* RealmZone.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E2F401CC4CA1600A4E74C /* RealmZone.swift */; };
+		B3885B341CC409D50030AEB6 /* RealmEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3885B331CC409D50030AEB6 /* RealmEntities.swift */; };
+		B3FF11201CBFDFDB00C1B93E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FF11181CBFDFDB00C1B93E /* AppDelegate.swift */; };
+		B3FF11211CBFDFDB00C1B93E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3FF11191CBFDFDB00C1B93E /* Assets.xcassets */; };
+		B3FF11221CBFDFDB00C1B93E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3FF111A1CBFDFDB00C1B93E /* LaunchScreen.storyboard */; };
+		B3FF11231CBFDFDB00C1B93E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3FF111C1CBFDFDB00C1B93E /* Main.storyboard */; };
+		B3FF11281CBFE1D200C1B93E /* ZonesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FF11271CBFE1D200C1B93E /* ZonesTableViewController.swift */; };
+		B3FF112A1CBFE1E700C1B93E /* LampsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FF11291CBFE1E700C1B93E /* LampsViewController.swift */; };
+		B3FF112C1CBFE1F900C1B93E /* ChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FF112B1CBFE1F900C1B93E /* ChartsViewController.swift */; };
+		B3FF112E1CBFE20A00C1B93E /* ReadingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FF112D1CBFE20A00C1B93E /* ReadingsViewController.swift */; };
+		B3FF11301CBFE30A00C1B93E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FF112F1CBFE30A00C1B93E /* Extensions.swift */; };
+		B3FF11341CBFE3D800C1B93E /* Arcon-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3FF11331CBFE37A00C1B93E /* Arcon-Regular.ttf */; };
+		B3FF11371CBFE5CC00C1B93E /* ErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3FF11361CBFE5CC00C1B93E /* ErrorView.xib */; };
+		B3FF11391CBFE5D600C1B93E /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FF11381CBFE5D600C1B93E /* ErrorView.swift */; };
+		B3FF113D1CBFEE1400C1B93E /* DataReadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FF113C1CBFEE1400C1B93E /* DataReadingTableViewCell.swift */; };
+		B3FF11411CBFF19100C1B93E /* CoreCityOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FF11401CBFF19100C1B93E /* CoreCityOS.framework */; };
+		B3FF11421CBFF19100C1B93E /* CoreCityOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B3FF11401CBFF19100C1B93E /* CoreCityOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B3FF114C1CBFF1D900C1B93E /* LightFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = B3FF114B1CBFF1D900C1B93E /* LightFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3FF11501CBFF1D900C1B93E /* LightFactory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FF11491CBFF1D900C1B93E /* LightFactory.framework */; };
+		B3FF11511CBFF1D900C1B93E /* LightFactory.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B3FF11491CBFF1D900C1B93E /* LightFactory.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B3FF11551CBFF1E900C1B93E /* CoreCityOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FF11401CBFF19100C1B93E /* CoreCityOS.framework */; };
+		B3FF11571CBFF20800C1B93E /* LightFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FF11561CBFF20800C1B93E /* LightFactory.swift */; };
+		B3FF11601CBFF27300C1B93E /* Flowthings.h in Headers */ = {isa = PBXBuildFile; fileRef = B3FF115F1CBFF27300C1B93E /* Flowthings.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3FF11641CBFF27300C1B93E /* Flowthings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FF115D1CBFF27300C1B93E /* Flowthings.framework */; };
+		B3FF11651CBFF27300C1B93E /* Flowthings.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B3FF115D1CBFF27300C1B93E /* Flowthings.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B3FF116A1CBFF29700C1B93E /* Lamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FF11691CBFF29700C1B93E /* Lamp.swift */; };
+		B3FF116C1CBFF2E100C1B93E /* LampDataCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FF116B1CBFF2E100C1B93E /* LampDataCollection.swift */; };
+		B3FF116E1CBFF48100C1B93E /* Flowthings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FF116D1CBFF48100C1B93E /* Flowthings.swift */; };
+		B3FF11711CBFF9EA00C1B93E /* FlowType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FF11701CBFF9EA00C1B93E /* FlowType.swift */; };
+		B3FF11731CBFFAD400C1B93E /* FlowRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FF11721CBFFAD400C1B93E /* FlowRequest.swift */; };
+		B3FF11741CBFFC8600C1B93E /* Flowthings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FF115D1CBFF27300C1B93E /* Flowthings.framework */; };
+		B3FF11771CC027E600C1B93E /* ZoneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FF11751CC0251100C1B93E /* ZoneTableViewCell.swift */; };
+		B3FF11791CC0430800C1B93E /* Serializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FF11781CC0430800C1B93E /* Serializer.swift */; };
+		B3FF117B1CC0CFDA00C1B93E /* LampZone.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FF117A1CC0CFDA00C1B93E /* LampZone.swift */; };
+		B3FF117E1CC0D0AE00C1B93E /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FF117C1CC0D0AE00C1B93E /* Realm.framework */; };
+		B3FF117F1CC0D0AE00C1B93E /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B3FF117C1CC0D0AE00C1B93E /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B3FF11801CC0D0AE00C1B93E /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FF117D1CC0D0AE00C1B93E /* RealmSwift.framework */; };
+		B3FF11811CC0D0AE00C1B93E /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B3FF117D1CC0D0AE00C1B93E /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B3FF11821CC0D0D900C1B93E /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FF117D1CC0D0AE00C1B93E /* RealmSwift.framework */; };
+		B3FF11831CC0D0DC00C1B93E /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FF117C1CC0D0AE00C1B93E /* Realm.framework */; };
+		B3FF11861CC1522700C1B93E /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FF11851CC1522700C1B93E /* Cache.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B30E2F241CC4376500A4E74C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B3FF10FA1CBFDFC600C1B93E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B30E2F1E1CC4376500A4E74C;
+			remoteInfo = Cache;
+		};
+		B30E2F351CC4378900A4E74C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B3FF10FA1CBFDFC600C1B93E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B30E2F1E1CC4376500A4E74C;
+			remoteInfo = Cache;
+		};
+		B3FF114E1CBFF1D900C1B93E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B3FF10FA1CBFDFC600C1B93E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B3FF11481CBFF1D900C1B93E;
+			remoteInfo = LightFactory;
+		};
+		B3FF11621CBFF27300C1B93E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B3FF10FA1CBFDFC600C1B93E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B3FF115C1CBFF27300C1B93E;
+			remoteInfo = Flowthings;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B3FF11431CBFF19200C1B93E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B3FF117F1CC0D0AE00C1B93E /* Realm.framework in Embed Frameworks */,
+				B3FF11811CC0D0AE00C1B93E /* RealmSwift.framework in Embed Frameworks */,
+				B3FF11511CBFF1D900C1B93E /* LightFactory.framework in Embed Frameworks */,
+				B3FF11651CBFF27300C1B93E /* Flowthings.framework in Embed Frameworks */,
+				B3FF11421CBFF19100C1B93E /* CoreCityOS.framework in Embed Frameworks */,
+				B30E2F271CC4376500A4E74C /* Cache.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		B30E2F181CC4315100A4E74C /* LampLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LampLocation.swift; sourceTree = "<group>"; };
+		B30E2F1F1CC4376500A4E74C /* Cache.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Cache.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B30E2F211CC4376500A4E74C /* Cache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cache.h; sourceTree = "<group>"; };
+		B30E2F231CC4376500A4E74C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B30E2F2F1CC4378900A4E74C /* Cache Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Cache Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B30E2F311CC4378900A4E74C /* RealmLampTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmLampTests.swift; sourceTree = "<group>"; };
+		B30E2F331CC4378900A4E74C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B30E2F3D1CC4380E00A4E74C /* RealmLamp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmLamp.swift; sourceTree = "<group>"; };
+		B30E2F401CC4CA1600A4E74C /* RealmZone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmZone.swift; sourceTree = "<group>"; };
+		B3885B331CC409D50030AEB6 /* RealmEntities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmEntities.swift; sourceTree = "<group>"; };
+		B3FF11021CBFDFC600C1B93E /* CityOS-LED.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CityOS-LED.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3FF11181CBFDFDB00C1B93E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B3FF11191CBFDFDB00C1B93E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B3FF111B1CBFDFDB00C1B93E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B3FF111D1CBFDFDB00C1B93E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B3FF111E1CBFDFDB00C1B93E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B3FF11271CBFE1D200C1B93E /* ZonesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZonesTableViewController.swift; sourceTree = "<group>"; };
+		B3FF11291CBFE1E700C1B93E /* LampsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LampsViewController.swift; sourceTree = "<group>"; };
+		B3FF112B1CBFE1F900C1B93E /* ChartsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartsViewController.swift; sourceTree = "<group>"; };
+		B3FF112D1CBFE20A00C1B93E /* ReadingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadingsViewController.swift; sourceTree = "<group>"; };
+		B3FF112F1CBFE30A00C1B93E /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		B3FF11331CBFE37A00C1B93E /* Arcon-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Arcon-Regular.ttf"; sourceTree = "<group>"; };
+		B3FF11361CBFE5CC00C1B93E /* ErrorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ErrorView.xib; sourceTree = "<group>"; };
+		B3FF11381CBFE5D600C1B93E /* ErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		B3FF113C1CBFEE1400C1B93E /* DataReadingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataReadingTableViewCell.swift; sourceTree = "<group>"; };
+		B3FF11401CBFF19100C1B93E /* CoreCityOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreCityOS.framework; path = Carthage/Build/iOS/CoreCityOS.framework; sourceTree = "<group>"; };
+		B3FF11491CBFF1D900C1B93E /* LightFactory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LightFactory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3FF114B1CBFF1D900C1B93E /* LightFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LightFactory.h; sourceTree = "<group>"; };
+		B3FF114D1CBFF1D900C1B93E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B3FF11561CBFF20800C1B93E /* LightFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightFactory.swift; sourceTree = "<group>"; };
+		B3FF115D1CBFF27300C1B93E /* Flowthings.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Flowthings.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3FF115F1CBFF27300C1B93E /* Flowthings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Flowthings.h; sourceTree = "<group>"; };
+		B3FF11611CBFF27300C1B93E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B3FF11691CBFF29700C1B93E /* Lamp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lamp.swift; sourceTree = "<group>"; };
+		B3FF116B1CBFF2E100C1B93E /* LampDataCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LampDataCollection.swift; sourceTree = "<group>"; };
+		B3FF116D1CBFF48100C1B93E /* Flowthings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flowthings.swift; sourceTree = "<group>"; };
+		B3FF11701CBFF9EA00C1B93E /* FlowType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowType.swift; sourceTree = "<group>"; };
+		B3FF11721CBFFAD400C1B93E /* FlowRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowRequest.swift; sourceTree = "<group>"; };
+		B3FF11751CC0251100C1B93E /* ZoneTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoneTableViewCell.swift; sourceTree = "<group>"; };
+		B3FF11781CC0430800C1B93E /* Serializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Serializer.swift; sourceTree = "<group>"; };
+		B3FF117A1CC0CFDA00C1B93E /* LampZone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LampZone.swift; sourceTree = "<group>"; };
+		B3FF117C1CC0D0AE00C1B93E /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		B3FF117D1CC0D0AE00C1B93E /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		B3FF11851CC1522700C1B93E /* Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B30E2F1B1CC4376500A4E74C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B30E2F3A1CC437ED00A4E74C /* Realm.framework in Frameworks */,
+				B30E2F3B1CC437ED00A4E74C /* RealmSwift.framework in Frameworks */,
+				B30E2F3C1CC437ED00A4E74C /* CoreCityOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B30E2F2C1CC4378900A4E74C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B30E2F341CC4378900A4E74C /* Cache.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3FF10FF1CBFDFC600C1B93E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3FF117E1CC0D0AE00C1B93E /* Realm.framework in Frameworks */,
+				B3FF11801CC0D0AE00C1B93E /* RealmSwift.framework in Frameworks */,
+				B3FF11501CBFF1D900C1B93E /* LightFactory.framework in Frameworks */,
+				B3FF11641CBFF27300C1B93E /* Flowthings.framework in Frameworks */,
+				B3FF11411CBFF19100C1B93E /* CoreCityOS.framework in Frameworks */,
+				B30E2F261CC4376500A4E74C /* Cache.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3FF11451CBFF1D900C1B93E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B30E2F3F1CC440D400A4E74C /* Cache.framework in Frameworks */,
+				B3FF11741CBFFC8600C1B93E /* Flowthings.framework in Frameworks */,
+				B3FF11551CBFF1E900C1B93E /* CoreCityOS.framework in Frameworks */,
+				B3FF11831CC0D0DC00C1B93E /* Realm.framework in Frameworks */,
+				B3FF11821CC0D0D900C1B93E /* RealmSwift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3FF11591CBFF27300C1B93E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B30E2F201CC4376500A4E74C /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				B30E2F211CC4376500A4E74C /* Cache.h */,
+				B30E2F231CC4376500A4E74C /* Info.plist */,
+				B30E2F3D1CC4380E00A4E74C /* RealmLamp.swift */,
+				B30E2F401CC4CA1600A4E74C /* RealmZone.swift */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
+		B30E2F301CC4378900A4E74C /* Cache Tests */ = {
+			isa = PBXGroup;
+			children = (
+				B30E2F311CC4378900A4E74C /* RealmLampTests.swift */,
+				B30E2F331CC4378900A4E74C /* Info.plist */,
+			);
+			path = "Cache Tests";
+			sourceTree = "<group>";
+		};
+		B3FF10F91CBFDFC600C1B93E = {
+			isa = PBXGroup;
+			children = (
+				B3FF11311CBFE34400C1B93E /* Assets */,
+				B30E2F201CC4376500A4E74C /* Cache */,
+				B3FF115E1CBFF27300C1B93E /* Flowthings */,
+				B30E2F301CC4378900A4E74C /* Cache Tests */,
+				B3FF113F1CBFF17D00C1B93E /* Frameworks */,
+				B3FF114A1CBFF1D900C1B93E /* LightFactory */,
+				B3FF11031CBFDFC600C1B93E /* Products */,
+				B3FF11171CBFDFDB00C1B93E /* Sources */,
+			);
+			sourceTree = "<group>";
+		};
+		B3FF11031CBFDFC600C1B93E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B3FF11021CBFDFC600C1B93E /* CityOS-LED.app */,
+				B3FF11491CBFF1D900C1B93E /* LightFactory.framework */,
+				B3FF115D1CBFF27300C1B93E /* Flowthings.framework */,
+				B30E2F1F1CC4376500A4E74C /* Cache.framework */,
+				B30E2F2F1CC4378900A4E74C /* Cache Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B3FF11171CBFDFDB00C1B93E /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				B3FF111E1CBFDFDB00C1B93E /* Info.plist */,
+				B3FF11181CBFDFDB00C1B93E /* AppDelegate.swift */,
+				B3FF112F1CBFE30A00C1B93E /* Extensions.swift */,
+				B30E2F181CC4315100A4E74C /* LampLocation.swift */,
+				B3FF11191CBFDFDB00C1B93E /* Assets.xcassets */,
+				B3FF113B1CBFEE0200C1B93E /* Cells */,
+				B3FF11261CBFE1B900C1B93E /* Controllers */,
+				B3FF113E1CBFEE2200C1B93E /* Storyboards */,
+				B3FF11351CBFE5AE00C1B93E /* Views */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		B3FF11261CBFE1B900C1B93E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B3FF11271CBFE1D200C1B93E /* ZonesTableViewController.swift */,
+				B3FF11291CBFE1E700C1B93E /* LampsViewController.swift */,
+				B3FF112B1CBFE1F900C1B93E /* ChartsViewController.swift */,
+				B3FF112D1CBFE20A00C1B93E /* ReadingsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B3FF11311CBFE34400C1B93E /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				B3FF11321CBFE35100C1B93E /* Fonts */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		B3FF11321CBFE35100C1B93E /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				B3FF11331CBFE37A00C1B93E /* Arcon-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		B3FF11351CBFE5AE00C1B93E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B3FF113A1CBFE5DA00C1B93E /* ErrorView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B3FF113A1CBFE5DA00C1B93E /* ErrorView */ = {
+			isa = PBXGroup;
+			children = (
+				B3FF11361CBFE5CC00C1B93E /* ErrorView.xib */,
+				B3FF11381CBFE5D600C1B93E /* ErrorView.swift */,
+			);
+			name = ErrorView;
+			sourceTree = "<group>";
+		};
+		B3FF113B1CBFEE0200C1B93E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B3FF113C1CBFEE1400C1B93E /* DataReadingTableViewCell.swift */,
+				B3FF11751CC0251100C1B93E /* ZoneTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		B3FF113E1CBFEE2200C1B93E /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				B3FF111A1CBFDFDB00C1B93E /* LaunchScreen.storyboard */,
+				B3FF111C1CBFDFDB00C1B93E /* Main.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		B3FF113F1CBFF17D00C1B93E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B3FF117C1CC0D0AE00C1B93E /* Realm.framework */,
+				B3FF117D1CC0D0AE00C1B93E /* RealmSwift.framework */,
+				B3FF11401CBFF19100C1B93E /* CoreCityOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B3FF114A1CBFF1D900C1B93E /* LightFactory */ = {
+			isa = PBXGroup;
+			children = (
+				B3FF114B1CBFF1D900C1B93E /* LightFactory.h */,
+				B3FF114D1CBFF1D900C1B93E /* Info.plist */,
+				B3FF11851CC1522700C1B93E /* Cache.swift */,
+				B3FF11691CBFF29700C1B93E /* Lamp.swift */,
+				B3FF116B1CBFF2E100C1B93E /* LampDataCollection.swift */,
+				B3FF117A1CC0CFDA00C1B93E /* LampZone.swift */,
+				B3FF11561CBFF20800C1B93E /* LightFactory.swift */,
+				B3885B331CC409D50030AEB6 /* RealmEntities.swift */,
+				B3FF11781CC0430800C1B93E /* Serializer.swift */,
+			);
+			path = LightFactory;
+			sourceTree = "<group>";
+		};
+		B3FF115E1CBFF27300C1B93E /* Flowthings */ = {
+			isa = PBXGroup;
+			children = (
+				B3FF115F1CBFF27300C1B93E /* Flowthings.h */,
+				B3FF11611CBFF27300C1B93E /* Info.plist */,
+				B3FF116D1CBFF48100C1B93E /* Flowthings.swift */,
+				B3FF11701CBFF9EA00C1B93E /* FlowType.swift */,
+				B3FF11721CBFFAD400C1B93E /* FlowRequest.swift */,
+			);
+			path = Flowthings;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		B30E2F1C1CC4376500A4E74C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B30E2F221CC4376500A4E74C /* Cache.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3FF11461CBFF1D900C1B93E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3FF114C1CBFF1D900C1B93E /* LightFactory.h in Headers */,
+				B3FF11601CBFF27300C1B93E /* Flowthings.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3FF115A1CBFF27300C1B93E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		B30E2F1E1CC4376500A4E74C /* Cache */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B30E2F281CC4376500A4E74C /* Build configuration list for PBXNativeTarget "Cache" */;
+			buildPhases = (
+				B30E2F1A1CC4376500A4E74C /* Sources */,
+				B30E2F1B1CC4376500A4E74C /* Frameworks */,
+				B30E2F1C1CC4376500A4E74C /* Headers */,
+				B30E2F1D1CC4376500A4E74C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Cache;
+			productName = Cache;
+			productReference = B30E2F1F1CC4376500A4E74C /* Cache.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B30E2F2E1CC4378900A4E74C /* Cache Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B30E2F371CC4378900A4E74C /* Build configuration list for PBXNativeTarget "Cache Tests" */;
+			buildPhases = (
+				B30E2F2B1CC4378900A4E74C /* Sources */,
+				B30E2F2C1CC4378900A4E74C /* Frameworks */,
+				B30E2F2D1CC4378900A4E74C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B30E2F361CC4378900A4E74C /* PBXTargetDependency */,
+			);
+			name = "Cache Tests";
+			productName = "Cache Tests";
+			productReference = B30E2F2F1CC4378900A4E74C /* Cache Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B3FF11011CBFDFC600C1B93E /* CityOS-LED */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B3FF11141CBFDFC600C1B93E /* Build configuration list for PBXNativeTarget "CityOS-LED" */;
+			buildPhases = (
+				B3FF10FE1CBFDFC600C1B93E /* Sources */,
+				B3FF10FF1CBFDFC600C1B93E /* Frameworks */,
+				B3FF11001CBFDFC600C1B93E /* Resources */,
+				B3FF11431CBFF19200C1B93E /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B3FF114F1CBFF1D900C1B93E /* PBXTargetDependency */,
+				B3FF11631CBFF27300C1B93E /* PBXTargetDependency */,
+				B30E2F251CC4376500A4E74C /* PBXTargetDependency */,
+			);
+			name = "CityOS-LED";
+			productName = "CityOS-LED";
+			productReference = B3FF11021CBFDFC600C1B93E /* CityOS-LED.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B3FF11481CBFF1D900C1B93E /* LightFactory */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B3FF11521CBFF1D900C1B93E /* Build configuration list for PBXNativeTarget "LightFactory" */;
+			buildPhases = (
+				B3FF11441CBFF1D900C1B93E /* Sources */,
+				B3FF11451CBFF1D900C1B93E /* Frameworks */,
+				B3FF11461CBFF1D900C1B93E /* Headers */,
+				B3FF11471CBFF1D900C1B93E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LightFactory;
+			productName = LightFactory;
+			productReference = B3FF11491CBFF1D900C1B93E /* LightFactory.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B3FF115C1CBFF27300C1B93E /* Flowthings */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B3FF11661CBFF27300C1B93E /* Build configuration list for PBXNativeTarget "Flowthings" */;
+			buildPhases = (
+				B3FF11581CBFF27300C1B93E /* Sources */,
+				B3FF11591CBFF27300C1B93E /* Frameworks */,
+				B3FF115A1CBFF27300C1B93E /* Headers */,
+				B3FF115B1CBFF27300C1B93E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Flowthings;
+			productName = Flowthings;
+			productReference = B3FF115D1CBFF27300C1B93E /* Flowthings.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B3FF10FA1CBFDFC600C1B93E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = CityOS;
+				TargetAttributes = {
+					B30E2F1E1CC4376500A4E74C = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					B30E2F2E1CC4378900A4E74C = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					B3FF11011CBFDFC600C1B93E = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					B3FF11481CBFF1D900C1B93E = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					B3FF115C1CBFF27300C1B93E = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = B3FF10FD1CBFDFC600C1B93E /* Build configuration list for PBXProject "CityOS-LED" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B3FF10F91CBFDFC600C1B93E;
+			productRefGroup = B3FF11031CBFDFC600C1B93E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B3FF11011CBFDFC600C1B93E /* CityOS-LED */,
+				B3FF11481CBFF1D900C1B93E /* LightFactory */,
+				B3FF115C1CBFF27300C1B93E /* Flowthings */,
+				B30E2F1E1CC4376500A4E74C /* Cache */,
+				B30E2F2E1CC4378900A4E74C /* Cache Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B30E2F1D1CC4376500A4E74C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B30E2F2D1CC4378900A4E74C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3FF11001CBFDFC600C1B93E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3FF11231CBFDFDB00C1B93E /* Main.storyboard in Resources */,
+				B3FF11211CBFDFDB00C1B93E /* Assets.xcassets in Resources */,
+				B3FF11221CBFDFDB00C1B93E /* LaunchScreen.storyboard in Resources */,
+				B3FF11341CBFE3D800C1B93E /* Arcon-Regular.ttf in Resources */,
+				B3FF11371CBFE5CC00C1B93E /* ErrorView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3FF11471CBFF1D900C1B93E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3FF115B1CBFF27300C1B93E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B30E2F1A1CC4376500A4E74C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B30E2F3E1CC4380E00A4E74C /* RealmLamp.swift in Sources */,
+				B30E2F411CC4CA1600A4E74C /* RealmZone.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B30E2F2B1CC4378900A4E74C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B30E2F321CC4378900A4E74C /* RealmLampTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3FF10FE1CBFDFC600C1B93E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B30E2F191CC4315100A4E74C /* LampLocation.swift in Sources */,
+				B3FF113D1CBFEE1400C1B93E /* DataReadingTableViewCell.swift in Sources */,
+				B3FF112A1CBFE1E700C1B93E /* LampsViewController.swift in Sources */,
+				B3FF11301CBFE30A00C1B93E /* Extensions.swift in Sources */,
+				B3FF112C1CBFE1F900C1B93E /* ChartsViewController.swift in Sources */,
+				B3FF11281CBFE1D200C1B93E /* ZonesTableViewController.swift in Sources */,
+				B3FF11391CBFE5D600C1B93E /* ErrorView.swift in Sources */,
+				B3FF11201CBFDFDB00C1B93E /* AppDelegate.swift in Sources */,
+				B3FF11771CC027E600C1B93E /* ZoneTableViewCell.swift in Sources */,
+				B3FF112E1CBFE20A00C1B93E /* ReadingsViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3FF11441CBFF1D900C1B93E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3FF11571CBFF20800C1B93E /* LightFactory.swift in Sources */,
+				B3FF11791CC0430800C1B93E /* Serializer.swift in Sources */,
+				B3FF117B1CC0CFDA00C1B93E /* LampZone.swift in Sources */,
+				B3885B341CC409D50030AEB6 /* RealmEntities.swift in Sources */,
+				B3FF116A1CBFF29700C1B93E /* Lamp.swift in Sources */,
+				B3FF11861CC1522700C1B93E /* Cache.swift in Sources */,
+				B3FF116C1CBFF2E100C1B93E /* LampDataCollection.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3FF11581CBFF27300C1B93E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3FF116E1CBFF48100C1B93E /* Flowthings.swift in Sources */,
+				B3FF11711CBFF9EA00C1B93E /* FlowType.swift in Sources */,
+				B3FF11731CBFFAD400C1B93E /* FlowRequest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B30E2F251CC4376500A4E74C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B30E2F1E1CC4376500A4E74C /* Cache */;
+			targetProxy = B30E2F241CC4376500A4E74C /* PBXContainerItemProxy */;
+		};
+		B30E2F361CC4378900A4E74C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B30E2F1E1CC4376500A4E74C /* Cache */;
+			targetProxy = B30E2F351CC4378900A4E74C /* PBXContainerItemProxy */;
+		};
+		B3FF114F1CBFF1D900C1B93E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B3FF11481CBFF1D900C1B93E /* LightFactory */;
+			targetProxy = B3FF114E1CBFF1D900C1B93E /* PBXContainerItemProxy */;
+		};
+		B3FF11631CBFF27300C1B93E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B3FF115C1CBFF27300C1B93E /* Flowthings */;
+			targetProxy = B3FF11621CBFF27300C1B93E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B3FF111A1CBFDFDB00C1B93E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B3FF111B1CBFDFDB00C1B93E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		B3FF111C1CBFDFDB00C1B93E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B3FF111D1CBFDFDB00C1B93E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B30E2F291CC4376500A4E74C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Cache/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.cityos.Cache;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B30E2F2A1CC4376500A4E74C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Cache/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.cityos.Cache;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B30E2F381CC4378900A4E74C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Cache Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.cityos.Cache-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B30E2F391CC4378900A4E74C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Cache Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.cityos.Cache-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		B3FF11121CBFDFC600C1B93E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B3FF11131CBFDFC600C1B93E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B3FF11151CBFDFC600C1B93E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Sources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.cityos.CityOS-LED";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B3FF11161CBFDFC600C1B93E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Sources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.cityos.CityOS-LED";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		B3FF11531CBFF1D900C1B93E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = LightFactory/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.cityos.LightFactory;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B3FF11541CBFF1D900C1B93E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = LightFactory/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.cityos.LightFactory;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B3FF11671CBFF27300C1B93E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Flowthings/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.cityos.Flowthings;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B3FF11681CBFF27300C1B93E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Flowthings/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.cityos.Flowthings;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B30E2F281CC4376500A4E74C /* Build configuration list for PBXNativeTarget "Cache" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B30E2F291CC4376500A4E74C /* Debug */,
+				B30E2F2A1CC4376500A4E74C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B30E2F371CC4378900A4E74C /* Build configuration list for PBXNativeTarget "Cache Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B30E2F381CC4378900A4E74C /* Debug */,
+				B30E2F391CC4378900A4E74C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B3FF10FD1CBFDFC600C1B93E /* Build configuration list for PBXProject "CityOS-LED" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3FF11121CBFDFC600C1B93E /* Debug */,
+				B3FF11131CBFDFC600C1B93E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B3FF11141CBFDFC600C1B93E /* Build configuration list for PBXNativeTarget "CityOS-LED" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3FF11151CBFDFC600C1B93E /* Debug */,
+				B3FF11161CBFDFC600C1B93E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B3FF11521CBFF1D900C1B93E /* Build configuration list for PBXNativeTarget "LightFactory" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3FF11531CBFF1D900C1B93E /* Debug */,
+				B3FF11541CBFF1D900C1B93E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B3FF11661CBFF27300C1B93E /* Build configuration list for PBXNativeTarget "Flowthings" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3FF11671CBFF27300C1B93E /* Debug */,
+				B3FF11681CBFF27300C1B93E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B3FF10FA1CBFDFC600C1B93E /* Project object */;
+}
