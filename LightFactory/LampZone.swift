@@ -25,17 +25,3 @@ public struct LampZone: ZoneType {
     }
 }
 
-extension ZoneType {
-    var realmZone: RealmZone {
-        let zone = RealmZone()
-        zone.zoneID = zoneID
-        zone.creationDate = creationDate ?? NSDate()
-        zone.devices.appendContentsOf(
-            RealmDeviceID.createFromArray(
-                devices.map { $0.deviceData.deviceID }
-            )
-        )
-
-        return zone
-    }
-}

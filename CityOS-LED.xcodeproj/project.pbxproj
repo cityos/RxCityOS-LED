@@ -19,7 +19,8 @@
 		B30E2F3E1CC4380E00A4E74C /* RealmLamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E2F3D1CC4380E00A4E74C /* RealmLamp.swift */; };
 		B30E2F3F1CC440D400A4E74C /* Cache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B30E2F1F1CC4376500A4E74C /* Cache.framework */; };
 		B30E2F411CC4CA1600A4E74C /* RealmZone.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E2F401CC4CA1600A4E74C /* RealmZone.swift */; };
-		B3885B341CC409D50030AEB6 /* RealmEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3885B331CC409D50030AEB6 /* RealmEntities.swift */; };
+		B30E2F431CC4CE1200A4E74C /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E2F421CC4CE1200A4E74C /* Cache.swift */; };
+		B30E2F451CC4CFA000A4E74C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E2F441CC4CFA000A4E74C /* Extensions.swift */; };
 		B3FF11201CBFDFDB00C1B93E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FF11181CBFDFDB00C1B93E /* AppDelegate.swift */; };
 		B3FF11211CBFDFDB00C1B93E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3FF11191CBFDFDB00C1B93E /* Assets.xcassets */; };
 		B3FF11221CBFDFDB00C1B93E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3FF111A1CBFDFDB00C1B93E /* LaunchScreen.storyboard */; };
@@ -58,7 +59,6 @@
 		B3FF11811CC0D0AE00C1B93E /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B3FF117D1CC0D0AE00C1B93E /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B3FF11821CC0D0D900C1B93E /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FF117D1CC0D0AE00C1B93E /* RealmSwift.framework */; };
 		B3FF11831CC0D0DC00C1B93E /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FF117C1CC0D0AE00C1B93E /* Realm.framework */; };
-		B3FF11861CC1522700C1B93E /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FF11851CC1522700C1B93E /* Cache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,7 +121,8 @@
 		B30E2F331CC4378900A4E74C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B30E2F3D1CC4380E00A4E74C /* RealmLamp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmLamp.swift; sourceTree = "<group>"; };
 		B30E2F401CC4CA1600A4E74C /* RealmZone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmZone.swift; sourceTree = "<group>"; };
-		B3885B331CC409D50030AEB6 /* RealmEntities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmEntities.swift; sourceTree = "<group>"; };
+		B30E2F421CC4CE1200A4E74C /* Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		B30E2F441CC4CFA000A4E74C /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		B3FF11021CBFDFC600C1B93E /* CityOS-LED.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CityOS-LED.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3FF11181CBFDFDB00C1B93E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3FF11191CBFDFDB00C1B93E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -155,7 +156,6 @@
 		B3FF117A1CC0CFDA00C1B93E /* LampZone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LampZone.swift; sourceTree = "<group>"; };
 		B3FF117C1CC0D0AE00C1B93E /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		B3FF117D1CC0D0AE00C1B93E /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
-		B3FF11851CC1522700C1B93E /* Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +219,8 @@
 				B30E2F231CC4376500A4E74C /* Info.plist */,
 				B30E2F3D1CC4380E00A4E74C /* RealmLamp.swift */,
 				B30E2F401CC4CA1600A4E74C /* RealmZone.swift */,
+				B30E2F421CC4CE1200A4E74C /* Cache.swift */,
+				B30E2F441CC4CFA000A4E74C /* Extensions.swift */,
 			);
 			path = Cache;
 			sourceTree = "<group>";
@@ -351,12 +353,10 @@
 			children = (
 				B3FF114B1CBFF1D900C1B93E /* LightFactory.h */,
 				B3FF114D1CBFF1D900C1B93E /* Info.plist */,
-				B3FF11851CC1522700C1B93E /* Cache.swift */,
 				B3FF11691CBFF29700C1B93E /* Lamp.swift */,
 				B3FF116B1CBFF2E100C1B93E /* LampDataCollection.swift */,
 				B3FF117A1CC0CFDA00C1B93E /* LampZone.swift */,
 				B3FF11561CBFF20800C1B93E /* LightFactory.swift */,
-				B3885B331CC409D50030AEB6 /* RealmEntities.swift */,
 				B3FF11781CC0430800C1B93E /* Serializer.swift */,
 			);
 			path = LightFactory;
@@ -594,7 +594,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B30E2F451CC4CFA000A4E74C /* Extensions.swift in Sources */,
 				B30E2F3E1CC4380E00A4E74C /* RealmLamp.swift in Sources */,
+				B30E2F431CC4CE1200A4E74C /* Cache.swift in Sources */,
 				B30E2F411CC4CA1600A4E74C /* RealmZone.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -631,9 +633,7 @@
 				B3FF11571CBFF20800C1B93E /* LightFactory.swift in Sources */,
 				B3FF11791CC0430800C1B93E /* Serializer.swift in Sources */,
 				B3FF117B1CC0CFDA00C1B93E /* LampZone.swift in Sources */,
-				B3885B341CC409D50030AEB6 /* RealmEntities.swift in Sources */,
 				B3FF116A1CBFF29700C1B93E /* Lamp.swift in Sources */,
-				B3FF11861CC1522700C1B93E /* Cache.swift in Sources */,
 				B3FF116C1CBFF2E100C1B93E /* LampDataCollection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

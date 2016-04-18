@@ -29,17 +29,3 @@ extension Lamp {
         ]
     }
 }
-
-
-
-extension DeviceType {
-    var realmLamp: RealmLamp {
-        let realmLamp = RealmLamp()
-        realmLamp.deviceID = deviceData.deviceID
-        realmLamp.creationDate = creationDate ?? NSDate()
-        realmLamp.latitude.value = location?.latitude ?? 0.0
-        realmLamp.longitude.value = location?.longitude ?? 0.0
-        realmLamp.schemaID = dataCollection.deviceData.deviceID
-        return realmLamp
-    }
-}

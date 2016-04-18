@@ -8,6 +8,7 @@
 
 import CoreCityOS
 import Flowthings
+import Cache
 
 public typealias LightFactoryCompletionBlock = (
     data: [DeviceType]?,
@@ -55,7 +56,7 @@ public final class LightFactory {
                 if let data = response.data {
                     do {
                         let zones = try Serializer.serializeZoneDrop(data)
-                        Cache.sharedCache.saveZonesToRealm(zones)
+                        Cache.sharedCache.saveZones(zones)
                         completion(zones: zones, error: nil)
                     } catch {
                         completion(zones: nil, error: error)
