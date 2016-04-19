@@ -50,6 +50,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             tabBarController.selectedIndex = 2
         }
         
+        print(Realm.Configuration.defaultConfiguration.path!)
+        
         return true
     }
     

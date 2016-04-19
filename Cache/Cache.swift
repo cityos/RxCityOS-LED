@@ -47,4 +47,12 @@ public final class Cache {
             }
             }, completion: nil)
     }
+    
+    public func getLamps() -> [DeviceType] {
+        let realm = try! Realm()
+        
+        let lamps = realm.objects(RealmLamp)
+        
+        return lamps.map { $0 }
+    }
 }

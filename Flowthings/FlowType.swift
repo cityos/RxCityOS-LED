@@ -15,6 +15,7 @@ public protocol FlowType {
 public enum Flows: FlowType {
     case In
     case Zones
+    case Lamps
     
     public var flowID: String {
         switch self {
@@ -22,6 +23,8 @@ public enum Flows: FlowType {
             return "f562e8c4f68056d244d594ce6"
         case .Zones:
             return "f562e8cd15bb709218f2aafd1"
+        case .Lamps:
+            return "f564f211a5bb7093f3e71eaa7"
         }
     }
 }

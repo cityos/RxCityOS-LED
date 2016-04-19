@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import CoreCityOS
+import class MapKit.MKMapView
 
 extension UIColor {
     class func mainColor() -> UIColor {
@@ -136,5 +137,26 @@ extension LiveDataType {
     
     var blueIcon: UIImage {
         return UIImage(named: "data-\(type.dataIdentifier.lowercaseString)-blue")!
+    }
+}
+
+
+extension MKMapView {
+    
+    var expandButton: UIButton? {
+        return subviews.filter { $0.tag == 133 }.first as? UIButton
+    }
+    
+    func addMapExpandButton() {
+        let button = UIButton()
+        button.tag = 133
+        button.setImage(UIImage(named: "map-expand"), forState: .Normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.addSubview(button)
+        var constraints = [NSLayoutConstraint]()
+        constraints.appendContentsOf(NSLayoutConstraint.constraintsWithVisualFormat("H:[expand]-10-|", options: [], metrics: nil, views: ["expand": button]))
+        constraints.appendContentsOf(NSLayoutConstraint.constraintsWithVisualFormat("V:[expand]-10-|", options: [], metrics: nil, views: ["expand": button]))
+        constraints.activateConstraints()
     }
 }

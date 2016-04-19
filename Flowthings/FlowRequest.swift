@@ -20,9 +20,12 @@ public class FlowRequest {
     
     public func createURL(account: String, token: String) -> NSURLRequest {
         var urlString = "https://api.flowthings.io/v0.1/\(account)/drop/\(flowID)"
+        
         if let filter = filter {
             urlString.appendContentsOf("?\(filter)")
         }
+        
+        urlString = urlString.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
         
         let request = NSMutableURLRequest(URL: NSURL(string: urlString)!)
 

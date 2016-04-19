@@ -12,6 +12,7 @@ import Cache
 
 public class Lamp: DeviceType {
     public var deviceData: DeviceData
+    public var name: String?
     public var creationDate: NSDate? = NSDate()
     public var location: DeviceLocation?
     public var dataCollection: LiveDataCollectionType
@@ -23,7 +24,7 @@ public class Lamp: DeviceType {
 }
 
 extension Lamp {
-    var validSchemas: [String] {
+    class var validSchemas: [String] {
         return [
             "bui4:niue:n2u3:meio"
         ]

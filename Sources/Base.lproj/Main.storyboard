@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dhI-v3-O38">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Arcon-Regular.ttf">
+            <string>Arcon-Regular</string>
+            <string>Arcon-Regular</string>
+            <string>Arcon-Regular</string>
+            <string>Arcon-Regular</string>
+            <string>Arcon-Regular</string>
+            <string>Arcon-Regular</string>
             <string>Arcon-Regular</string>
             <string>Arcon-Regular</string>
             <string>Arcon-Regular</string>
@@ -60,7 +65,7 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="JGR-g8-GQo">
                                             <rect key="frame" x="20" y="10" width="560" height="68"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="ShaSpa zone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vlm-OI-GsM">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ShaSpa zone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vlm-OI-GsM">
                                                     <rect key="frame" x="0.0" y="0.0" width="560" height="24"/>
                                                     <fontDescription key="fontDescription" name="Arcon-Regular" family="Arcon" pointSize="20"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -148,6 +153,38 @@
             </objects>
             <point key="canvasLocation" x="1252" y="-349"/>
         </scene>
+        <!--Map View Controller-->
+        <scene sceneID="aCs-ad-NU7">
+            <objects>
+                <viewController storyboardIdentifier="mapController" id="zmI-uH-GcH" customClass="MapViewController" customModule="CityOS_LED" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VcJ-Sf-2iE"/>
+                        <viewControllerLayoutGuide type="bottom" id="gZ7-FY-8hB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Tjf-si-aBB">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="hOF-PT-0tR">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gZ7-FY-8hB" firstAttribute="top" secondItem="hOF-PT-0tR" secondAttribute="bottom" id="M2B-mH-JTF"/>
+                            <constraint firstItem="hOF-PT-0tR" firstAttribute="top" secondItem="VcJ-Sf-2iE" secondAttribute="bottom" id="YRQ-mT-phD"/>
+                            <constraint firstAttribute="trailing" secondItem="hOF-PT-0tR" secondAttribute="trailing" id="lnx-OX-f5I"/>
+                            <constraint firstItem="hOF-PT-0tR" firstAttribute="leading" secondItem="Tjf-si-aBB" secondAttribute="leading" id="wak-d7-CKJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="hOF-PT-0tR" id="VSd-aL-EVV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YHl-KY-dqn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="580" y="-1050"/>
+        </scene>
         <!--Zones-->
         <scene sceneID="1GO-J2-u6T">
             <objects>
@@ -208,7 +245,7 @@
                                 <rect key="frame" x="0.0" y="264" width="600" height="287"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="lampCell" rowHeight="60" id="vPG-fE-sMB">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="lampCell" rowHeight="60" id="vPG-fE-sMB" customClass="LampTableViewCell" customModule="CityOS_LED" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vPG-fE-sMB" id="CSZ-ft-wOU">
@@ -251,6 +288,10 @@
                                                 <constraint firstAttribute="bottom" secondItem="gxk-UH-LDB" secondAttribute="bottom" constant="4" id="zEg-ls-RXH"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lampNameLabel" destination="zYs-6S-Rny" id="YCE-Hf-K7P"/>
+                                            <outlet property="zoneNameLabel" destination="6pl-b5-D5c" id="tUA-p8-x0C"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -330,9 +371,16 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="0.0" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="O3T-z7-qFi">
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <containerView key="tableHeaderView" opaque="NO" contentMode="scaleToFill" id="M6J-ce-2Dy">
+                                    <rect key="frame" x="0.0" y="64" width="600" height="90"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                    <connections>
+                                        <segue destination="mXF-op-7cA" kind="embed" id="yXU-KH-DtU"/>
+                                    </connections>
+                                </containerView>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="dataCell" rowHeight="60" id="PCo-qa-iaB" customClass="DataReadingTableViewCell" customModule="CityOS_LED" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="600" height="60"/>
+                                        <rect key="frame" x="0.0" y="182" width="600" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PCo-qa-iaB" id="L0Q-ai-g6p">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="59.5"/>
@@ -345,13 +393,13 @@
                                                             <rect key="frame" x="0.0" y="17" width="26" height="26"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" misplaced="YES" text="Temperature" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jkJ-xj-7fF">
-                                                            <rect key="frame" x="46" y="20" width="417" height="21"/>
+                                                            <rect key="frame" x="46" y="19" width="417" height="22"/>
                                                             <fontDescription key="fontDescription" name="Arcon-Regular" family="Arcon" pointSize="18"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" misplaced="YES" text="35 C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eg3-xw-OQr">
-                                                            <rect key="frame" x="483" y="19" width="43" height="24"/>
+                                                            <rect key="frame" x="483" y="18" width="42" height="24"/>
                                                             <fontDescription key="fontDescription" name="Arcon-Regular" family="Arcon" pointSize="20"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -398,6 +446,89 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hfu-2z-GLN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1289" y="1806"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="nJS-HS-n0t">
+            <objects>
+                <viewController id="mXF-op-7cA" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fZf-OC-s4X"/>
+                        <viewControllerLayoutGuide type="bottom" id="Cyb-CO-Lf7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Sq5-r3-VZR">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="90"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="r1d-AD-yN6">
+                                <rect key="frame" x="20" y="10" width="570" height="70"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="O40-xq-SaD">
+                                        <rect key="frame" x="0.0" y="0.0" width="253" height="19"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Lamp name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mi3-he-8Qy">
+                                                <rect key="frame" x="0.0" y="0.0" width="85" height="19"/>
+                                                <fontDescription key="fontDescription" name="Arcon-Regular" family="Arcon" pointSize="16"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="ShaSpa Demo Lamp #1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zpl-D6-ZNX">
+                                                <rect key="frame" x="95" y="0.0" width="158" height="19"/>
+                                                <fontDescription key="fontDescription" name="Arcon-Regular" family="Arcon" pointSize="16"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="S94-yM-FGi">
+                                        <rect key="frame" x="0.0" y="25" width="233" height="20"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Address:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5d9-Ld-Tb0">
+                                                <rect key="frame" x="0.0" y="0.0" width="60" height="20"/>
+                                                <fontDescription key="fontDescription" name="Arcon-Regular" family="Arcon" pointSize="16"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Some street somewhere" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GBt-8c-jGe">
+                                                <rect key="frame" x="70" y="0.0" width="163" height="20"/>
+                                                <fontDescription key="fontDescription" name="Arcon-Regular" family="Arcon" pointSize="16"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jxw-Lb-ZiT">
+                                        <rect key="frame" x="0.0" y="51" width="153" height="20"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Timestamp:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bh6-uQ-FXX">
+                                                <rect key="frame" x="0.0" y="0.0" width="79" height="20"/>
+                                                <fontDescription key="fontDescription" name="Arcon-Regular" family="Arcon" pointSize="16"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="12:42 AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ErT-Vs-ivh">
+                                                <rect key="frame" x="89" y="0.0" width="64" height="20"/>
+                                                <fontDescription key="fontDescription" name="Arcon-Regular" family="Arcon" pointSize="16"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="r1d-AD-yN6" firstAttribute="leading" secondItem="Sq5-r3-VZR" secondAttribute="leading" constant="20" id="A1X-3r-mby"/>
+                            <constraint firstItem="r1d-AD-yN6" firstAttribute="top" secondItem="Sq5-r3-VZR" secondAttribute="top" constant="10" id="Qwz-dV-vpJ"/>
+                            <constraint firstItem="r1d-AD-yN6" firstAttribute="centerY" secondItem="Sq5-r3-VZR" secondAttribute="centerY" id="UJC-nT-TCr"/>
+                            <constraint firstAttribute="bottom" secondItem="r1d-AD-yN6" secondAttribute="bottom" constant="10" id="W1W-3X-iMP"/>
+                            <constraint firstAttribute="trailing" secondItem="r1d-AD-yN6" secondAttribute="trailing" constant="10" id="pNW-UQ-n4a"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eCr-Xw-Tvw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2004" y="1633.5"/>
         </scene>
     </scenes>
     <resources>

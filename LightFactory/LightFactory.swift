@@ -32,7 +32,6 @@ public final class LightFactory {
                 if let data = response.data {
                     do {
                         let devices = try Serializer.serializeDrop(data)
-//                        Cache.sharedCache.saveLampsToRealm(devices)
                         completion(data: devices, error: nil)
                     } catch {
                         completion(data: nil, error: error)
@@ -60,6 +59,29 @@ public final class LightFactory {
                         completion(zones: zones, error: nil)
                     } catch {
                         completion(zones: nil, error: error)
+                    }
+                }
+            }
+        }
+    }
+    
+    public func retrieveAllLamps(completion: (lamps: [DeviceType]?, error: ErrorType?) -> ()) {
+        let request = FlowRequest(flow: Flows.Lamps)
+        request.filter = "limit=100&hints=0&filter=elems.schema IN \(Lamp.validSchemas)"
+        
+        Flowthings.sharedInstance.find(request) {
+            response in
+            
+            if response.error != nil {
+                completion(lamps: nil, error: response.error!)
+            } else {
+                if let data = response.data {
+                    do {
+                        let lamps = try Serializer.serializeLampDrop(data)
+                        Cache.sharedCache.saveLamps(lamps)
+                        completion(lamps: lamps, error: nil)
+                    } catch {
+                        completion(lamps: nil, error: error)
                     }
                 }
             }

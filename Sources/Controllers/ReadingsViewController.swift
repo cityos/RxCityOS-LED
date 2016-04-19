@@ -28,7 +28,7 @@ class ReadingsTableViewController: UIViewController {
         tableView.backgroundColor = UIColor.clearColor()
         tableView.separatorColor = UIColor(white: 1, alpha: 0.6)
         tableView.rowHeight = 60
-//        tableView.alpha = 0
+        tableView.alpha = 0
         
         setupBackgroundViews()
         addRefreshControl()
@@ -41,9 +41,9 @@ class ReadingsTableViewController: UIViewController {
                     UIApplication.sharedApplication().networkActivityIndicatorVisible = false
                     self.device = device
                     self.tableView.reloadData()
-//                    UIView.animateWithDuration(0.4) {
-//                        self.tableView.alpha = 1
-//                    }
+                    UIView.animateWithDuration(0.4) {
+                        self.tableView.alpha = 1
+                    }
                 })
             }
         }
