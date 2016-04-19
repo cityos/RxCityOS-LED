@@ -16,7 +16,7 @@ extension ZoneType {
         zone.lastEditTimestamp.value = creationDate?.timeIntervalSince1970
         zone.name = name
         
-        zone.devices.appendContentsOf(
+        zone.allDevices.appendContentsOf(
             RealmDeviceID.createFromArray(
                 devices.map { $0.deviceData.deviceID }
             )

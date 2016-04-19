@@ -34,7 +34,7 @@ public final class Cache {
                 background!()
             }
             
-            if completion != nil {
+            if completion == nil {
                 return
             } else {
                 let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delay * Double(NSEC_PER_SEC)))
@@ -91,9 +91,55 @@ public final class Cache {
         )
     }
     
-    public func getLamps() -> [DeviceType] {
-        let realm = try! Realm()
-        let lamps = realm.objects(RealmLamp)
-        return lamps.map { $0 }
+    /**
+        Returns all lamps from cache
+        
+        - throws: Realm error
+     
+        - returns: [DeviceType] array
+    */
+    public func getLamps() throws -> [DeviceType] {
+        do {
+            let realm = try Realm()
+            let lamps = realm.objects(RealmLamp)
+            return lamps.map { $0 }
+        } catch {
+            throw error
+        }
+    }
+    
+    
+    /**
+        Returns single lamp based on the lamp id provided
+        
+        - parameter lampID: ID of the lamp
+        
+        - throws: Realm Error
+        
+        - returns: `DeviceType?` optional instance
+    */
+    public func getLamp(lampID: String) throws -> DeviceType? {
+        do {
+            let realm = try Realm()
+            let lamp = realm.objectForPrimaryKey(RealmLamp.self, key: lampID)
+            return lamp as? DeviceType
+        } catch {
+            throw error
+        }
+    }
+    
+    /**
+        Returns all zones from cache
+        
+        - returns: [ZoneType] array of zones
+    */
+    public func getZones() throws -> [ZoneType] {
+        do {
+            let realm = try Realm()
+            let zones = realm.objects(RealmZone)
+            return zones.map { $0 }
+        } catch {
+            throw error
+        }
     }
 }

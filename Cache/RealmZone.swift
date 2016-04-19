@@ -8,6 +8,7 @@
 
 import Foundation
 import RealmSwift
+import CoreCityOS
 
 /// Used in Realm arrays to describe string device ID
 public class RealmDeviceID: Object {
@@ -38,12 +39,30 @@ public class RealmZone: Object {
     let lastEditTimestamp = RealmOptional<Double>()
     
     /// Devices array
-    public let devices = List<RealmDeviceID>()
+    public let allDevices = List<RealmDeviceID>()
     
     /// Zone name
     dynamic public var name = ""
     
     override public class func primaryKey() -> String {
         return "zoneID"
+    }
+}
+
+//MARK: ZoneType implementation
+extension RealmZone: ZoneType {
+    public var creationDate: NSDate? {
+        if let creationTimestamp = creationTimestamp.value {
+            return NSDate(timeIntervalSince1970: creationTimestamp / 1000)
+        }
+        return nil
+    }
+    
+    public var devices: [DeviceType] {
+        return allDevices.map {
+            let lamp = RealmLamp()
+            lamp.deviceID = $0.deviceID
+            return lamp
+        }
     }
 }
