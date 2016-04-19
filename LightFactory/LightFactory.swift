@@ -31,7 +31,7 @@ public final class LightFactory {
             } else {
                 if let data = response.data {
                     do {
-                        let devices = try Serializer.serializeDrop(data)
+                        let devices = try Serializer.serializeLiveDrop(data)
                         completion(data: devices, error: nil)
                     } catch {
                         completion(data: nil, error: error)

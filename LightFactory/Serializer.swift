@@ -6,17 +6,45 @@
 //  Copyright © 2016 CityOS. All rights reserved.
 //
 
-import Foundation
+import class Foundation.NSJSONSerialization
 import CoreCityOS
 
+/**
+    These keys are used in serialization process to provide additional
+    data about the lamps
+*/
+
+/// Last edit timestamp key
+public let LightFactoryLastUpdateKey = "update"
+
+/// Lamp zone id key
+public let LightFactoryZoneKey = "zone"
+
+/**
+    Use serializer class to serialize `NSData` returned from the network request
+    to the `CoreCityOS` objects.
+ 
+    `NSData` objects must be returned from the Flowthings API, otherwise Serializer
+    isn't going to work.
+*/
 class Serializer {
-    class func serializeDrop(data: NSData) throws -> [DeviceType] {
+    
+    /**
+        Serializes Flowthings drop from `In` flow to `[DeviceType]` array
+        
+        - parameter data: `NSData` object used in serialization
+        
+        - throws: `SerializerError`
+     
+        - returns: `[DeviceType]` array of instances conforming DeviceType protocol
+    */
+    class func serializeLiveDrop(data: NSData) throws -> [DeviceType] {
         var jsonData: [String:AnyObject]!
         
         do {
             let json = try NSJSONSerialization.JSONObjectWithData(data, options: [])
             guard let dictionary = json as? [String: AnyObject] else {
-                throw SerializerError.InvalidDataParsed(message: "")
+                throw SerializerError.InvalidDataParsed(message: "Error while parsing the data using NSJSONSerialization")
             }
             jsonData = dictionary
         } catch {
@@ -51,13 +79,22 @@ class Serializer {
         return dataCollection
     }
     
+    /**
+         Serializes Flowthings drop from `Zone` flow to `[ZoneType]` array
+         
+         - parameter data: `NSData` object used in serialization
+         
+         - throws: `SerializerError`
+         
+         - returns: `[ZoneType]` array of instances conforming ZoneType protocol
+     */
     class func serializeZoneDrop(data: NSData) throws -> [ZoneType] {
         var jsonData: [String:AnyObject]!
         
         do {
             let json = try NSJSONSerialization.JSONObjectWithData(data, options: [])
             guard let dictionary = json as? [String: AnyObject] else {
-                throw SerializerError.InvalidDataParsed(message: "")
+                throw SerializerError.InvalidDataParsed(message: "Error while parsing the data using NSJSONSerialization")
             }
             jsonData = dictionary
         } catch {
@@ -97,13 +134,22 @@ class Serializer {
         return zones
     }
     
+    /**
+         Serializes Flowthings drop from `Lamps` flow to `[DeviceType]` array
+         
+         - parameter data: `NSData` object used in serialization
+         
+         - throws: `SerializerError`
+         
+         - returns: `[DeviceType]` array of instances conforming DeviceType protocol
+    */
     class func serializeLampDrop(data: NSData) throws -> [DeviceType] {
         var jsonData: [String:AnyObject]!
         
         do {
             let json = try NSJSONSerialization.JSONObjectWithData(data, options: [])
             guard let dictionary = json as? [String: AnyObject] else {
-                throw SerializerError.InvalidDataParsed(message: "")
+                throw SerializerError.InvalidDataParsed(message: "Error while parsing the data using NSJSONSerialization")
             }
             jsonData = dictionary
         } catch {
@@ -123,7 +169,10 @@ class Serializer {
             
             let id = body[i]["id"] as! String
             let name = elems["model"] as? String
+            
             let schema = elems["schema"] as! String
+            let zoneID = elems["zoneId"] as! String
+            
             let creationDate = body[i]["creationDate"] as! Double
             let lastEditDate = body[i]["lastEditDate"] as! Double
             
@@ -131,7 +180,9 @@ class Serializer {
             
             lamp.name = name
             lamp.creationDate = NSDate(timeIntervalSince1970: creationDate / 1000)
-            lamp.deviceData.deviceInfo = ["update": lastEditDate]
+            
+            lamp.deviceData[LightFactoryLastUpdateKey] = lastEditDate
+            lamp.deviceData[LightFactoryZoneKey] = zoneID
             
             if let location = body[i]["location"] as? [String: AnyObject] {
                 let latitude = location["lat"] as! Double
