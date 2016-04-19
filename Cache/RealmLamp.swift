@@ -10,8 +10,13 @@ import CoreCityOS
 import RealmSwift
 import CoreCityOS
 
+/// Key used in `deviceInfo` property to define last edit date
 internal var UpdateTimestampKey = "update"
 
+/**
+    Empty class conforming `LiveDataCollectionType` protocol, used to
+    initialize dataCollection protocol requirement property on `RealmLamp` class
+*/
 internal class RealmDataCollection: LiveDataCollectionType {
     var allReadings: [LiveDataType] = []
     var creationDate: NSDate = NSDate()
@@ -49,11 +54,13 @@ public class RealmLamp: Object {
     public var dataCollection: LiveDataCollectionType = RealmDataCollection()
     
     //MARK: Model setup and helper functions
-    // Sets the primary key
+    
+    // Set the primary key
     override public class func primaryKey() -> String? {
         return "deviceID"
     }
     
+    // Set ignored properties
     override public static func ignoredProperties() -> [String] {
         return [
             "deviceData",
@@ -61,16 +68,24 @@ public class RealmLamp: Object {
         ]
     }
     
+    /**
+        Call this functions to set the `DeviceType` properites to
+        exact values.
+     
+        This is a workaround for now.
+    */
     public func setup() {
         deviceData.deviceID = deviceID
         deviceData.schema = schemaID
         dataCollection.deviceData.schema = schemaID
         
         if let editTimestamp = lastEditTimestamp.value {
-            deviceData.deviceInfo = [UpdateTimestampKey: editTimestamp]
+            deviceData[UpdateTimestampKey] = editTimestamp
         }
     }
 }
+
+//MARK: DeviceType implementation
 
 extension RealmLamp: DeviceType {
     

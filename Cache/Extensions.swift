@@ -12,7 +12,8 @@ extension ZoneType {
     var realmZone: RealmZone {
         let zone = RealmZone()
         zone.zoneID = zoneID
-        zone.creationDate = creationDate ?? NSDate()
+        zone.creationTimestamp.value = creationDate?.timeIntervalSince1970
+        zone.lastEditTimestamp.value = creationDate?.timeIntervalSince1970
         zone.name = name
         
         zone.devices.appendContentsOf(
@@ -26,19 +27,18 @@ extension ZoneType {
 }
 
 extension DeviceType {
-    
     var realmLamp: RealmLamp {
         let realmLamp = RealmLamp()
         realmLamp.deviceID = deviceData.deviceID
-        realmLamp.name = name
-        realmLamp.creationTimestamp.value = creationDate?.timeIntervalSince1970
-        realmLamp.latitude.value = location?.latitude ?? 0.0
-        realmLamp.longitude.value = location?.longitude ?? 0.0
         realmLamp.schemaID = dataCollection.deviceData.deviceID
         
-        if let deviceInfo = deviceData.deviceInfo {
-            realmLamp.lastEditTimestamp.value = deviceInfo[UpdateTimestampKey] as? Double
-        }
+        realmLamp.name = name
+        
+        realmLamp.creationTimestamp.value = creationDate?.timeIntervalSince1970
+        realmLamp.lastEditTimestamp.value = deviceData[UpdateTimestampKey] as? Double
+        
+        realmLamp.latitude.value = location?.latitude ?? 0.0
+        realmLamp.longitude.value = location?.longitude ?? 0.0
         
         return realmLamp
     }

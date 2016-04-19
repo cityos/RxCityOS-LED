@@ -10,13 +10,23 @@ import protocol CoreCityOS.ZoneType
 import protocol CoreCityOS.DeviceType
 import RealmSwift
 
-/// Cache class is used to offload Realm caching to background threads
-/// and return results on main thread
+/** 
+ Cache class is used to offload Realm caching to background threads
+ and return results on main thread
+*/
 public final class Cache {
     
     /// Singleton Cache object
     public static var sharedCache = Cache()
     
+    /**
+        Executes block of code on background thread using `dispatch_async` GCD call
+     
+        - parameter delay: delayed execution on background thread (default is 0.0)
+        - parameter background: Block of code to run on background thread
+        - parameter completion: Optional block of code that is ran after the execution of background block
+            on background thread
+    */
     func backgroundThread(delay: Double = 0.0, background: (() -> Void)? = nil, completion: (() -> Void)? = nil) {
         dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
             if(background != nil){ background!(); }
@@ -28,7 +38,11 @@ public final class Cache {
         }
     }
     
-    /// Saves zones to cache
+    /**
+        Saves zones to cache
+        
+        - parameter zones: array of instances conforming to `ZoneType` protocol
+    */
     public func saveZones(zones: [ZoneType]) {
         backgroundThread(background: {
             let realm = try! Realm()
@@ -38,7 +52,11 @@ public final class Cache {
             }, completion: nil)
     }
     
-    /// Saves lamps to cache
+    /**
+     Saves lamps to cache
+     
+     - parameter lamps: array of instances conforming to `DeviceType` protocol
+     */
     public func saveLamps(lamps: [DeviceType]) {
         backgroundThread(background: {
             let realm = try! Realm()

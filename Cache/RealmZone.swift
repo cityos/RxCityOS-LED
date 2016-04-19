@@ -31,8 +31,11 @@ public class RealmZone: Object {
     /// Zone ID
     dynamic public var zoneID = ""
     
-    /// Creation date
-    dynamic public var creationDate = NSDate()
+    /// Device creation date
+    let creationTimestamp = RealmOptional<Double>()
+    
+    /// Last update date
+    let lastEditTimestamp = RealmOptional<Double>()
     
     /// Devices array
     public let devices = List<RealmDeviceID>()
