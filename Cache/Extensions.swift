@@ -31,10 +31,15 @@ extension DeviceType {
         let realmLamp = RealmLamp()
         realmLamp.deviceID = deviceData.deviceID
         realmLamp.name = name
-        realmLamp.creationDate = creationDate ?? NSDate()
+        realmLamp.creationTimestamp.value = creationDate?.timeIntervalSince1970
         realmLamp.latitude.value = location?.latitude ?? 0.0
         realmLamp.longitude.value = location?.longitude ?? 0.0
         realmLamp.schemaID = dataCollection.deviceData.deviceID
+        
+        if let deviceInfo = deviceData.deviceInfo {
+            realmLamp.lastEditTimestamp.value = deviceInfo[UpdateTimestampKey] as? Double
+        }
+        
         return realmLamp
     }
 }

@@ -125,11 +125,13 @@ class Serializer {
             let name = elems["model"] as? String
             let schema = elems["schema"] as! String
             let creationDate = body[i]["creationDate"] as! Double
+            let lastEditDate = body[i]["lastEditDate"] as! Double
             
             let lamp = Lamp(lampID: id, schemaID: schema)
             
             lamp.name = name
             lamp.creationDate = NSDate(timeIntervalSince1970: creationDate / 1000)
+            lamp.deviceData.deviceInfo = ["update": lastEditDate]
             
             if let location = body[i]["location"] as? [String: AnyObject] {
                 let latitude = location["lat"] as! Double

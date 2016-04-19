@@ -10,6 +10,8 @@ import CoreCityOS
 import RealmSwift
 import CoreCityOS
 
+internal var UpdateTimestampKey = "update"
+
 internal class RealmDataCollection: LiveDataCollectionType {
     var allReadings: [LiveDataType] = []
     var creationDate: NSDate = NSDate()
@@ -24,10 +26,10 @@ public class RealmLamp: Object {
     dynamic public var deviceID = ""
     
     /// Device creation date
-    dynamic public var creationDate: NSDate?
+    let creationTimestamp = RealmOptional<Double>()
     
     /// Last update date
-    dynamic public var lastUpdateDate: NSDate?
+    let lastEditTimestamp = RealmOptional<Double>()
     
     /// Lamp name
     dynamic public var name: String?
@@ -61,13 +63,23 @@ public class RealmLamp: Object {
     
     public func setup() {
         deviceData.deviceID = deviceID
-        
         deviceData.schema = schemaID
         dataCollection.deviceData.schema = schemaID
+        
+        if let editTimestamp = lastEditTimestamp.value {
+            deviceData.deviceInfo = [UpdateTimestampKey: editTimestamp]
+        }
     }
 }
 
 extension RealmLamp: DeviceType {
+    
+    public var creationDate: NSDate? {
+        if let timestamp = creationTimestamp.value {
+            return NSDate(timeIntervalSince1970: timestamp)
+        }
+        return nil
+    }
     
     public var location: DeviceLocation? {
         if let latitude = latitude.value, longitude = longitude.value {
