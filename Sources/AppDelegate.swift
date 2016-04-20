@@ -17,24 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        UINavigationBar.appearance().barTintColor = UIColor.mainColor()
-        UINavigationBar.appearance().translucent = false
-        UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName : UIFont.mainFont(), NSForegroundColorAttributeName : UIColor.whiteColor()]
-        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
-        UIBarButtonItem.appearance().setTitleTextAttributes([NSFontAttributeName : UIFont.mainFont(), NSForegroundColorAttributeName : UIColor.whiteColor()], forState: .Normal)
-        UIBarButtonItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName : UIColor(red:0.52, green:0.82, blue:0.87, alpha:1)], forState: .Disabled)
-        UINavigationBar.appearance().shadowImage = UIImage()
-        UINavigationBar.appearance().setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-        
-        UIBarButtonItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.clearColor()], forState: UIControlState.Normal)
-        UITabBar.appearance().backgroundColor =  UIColor(red:0.97, green:0.97, blue:0.97, alpha:1)
-        UITabBar.appearance().tintColor = UIColor.mainColor()
-        UITabBar.appearance().translucent = true
-        UITabBar.appearance().shadowImage = UIImage()
-        UITabBar.appearance().clipsToBounds = true
-        
-        UITabBar.appearance().backgroundColor = UIColor(red:0.97, green:0.97, blue:0.97, alpha:1)
-        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        setGlobalAppearance()
         
         let config = Realm.Configuration(
             schemaVersion: 1,
@@ -77,6 +60,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
-    
+}
+
+extension AppDelegate {
+    func setGlobalAppearance() {
+        UINavigationBar.appearance().barTintColor = UIColor.mainColor()
+        UINavigationBar.appearance().translucent = false
+        UINavigationBar.appearance().titleTextAttributes = [
+            NSFontAttributeName : UIFont.mainFont(),
+            NSForegroundColorAttributeName : UIColor.whiteColor()
+        ]
+        
+        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+        UIBarButtonItem.appearance().setTitleTextAttributes([
+                NSFontAttributeName : UIFont.mainFont(),
+                NSForegroundColorAttributeName : UIColor.whiteColor()],
+            forState: .Normal
+        )
+        
+        UIBarButtonItem.appearance().setTitleTextAttributes([
+            NSForegroundColorAttributeName : UIColor(
+                red:0.52,
+                green:0.82,
+                blue:0.87, alpha:1)], forState: .Disabled)
+        UINavigationBar.appearance().shadowImage = UIImage()
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.clearColor()], forState: UIControlState.Normal)
+        UITabBar.appearance().backgroundColor =  UIColor(red:0.97, green:0.97, blue:0.97, alpha:1)
+        UITabBar.appearance().tintColor = UIColor.mainColor()
+        UITabBar.appearance().translucent = true
+        UITabBar.appearance().shadowImage = UIImage()
+        UITabBar.appearance().clipsToBounds = true
+        
+        UITabBar.appearance().backgroundColor = UIColor(red:0.97, green:0.97, blue:0.97, alpha:1)
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
+    }
 }
 

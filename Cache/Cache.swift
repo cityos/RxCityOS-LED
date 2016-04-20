@@ -28,7 +28,7 @@ public final class Cache {
      on background thread
      
      */
-    func backgroundThread(delay: Double = 0.0, background: (() -> Void)? = nil, completion: (() -> Void)? = nil) {
+    func backgroundThread(background: (() -> Void)? = nil, completion: (() -> Void)? = nil) {
         dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
             if background != nil {
                 background!()
@@ -37,10 +37,9 @@ public final class Cache {
             if completion == nil {
                 return
             } else {
-                let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delay * Double(NSEC_PER_SEC)))
-                dispatch_after(popTime, dispatch_get_main_queue()) {
+                dispatch_async(dispatch_get_main_queue(), {
                     completion!()
-                }
+                })
             }
         }
     }
@@ -52,20 +51,17 @@ public final class Cache {
      
      */
     public func saveZones(zones: [ZoneType]) {
-        backgroundThread(
-            background: {
-                do {
-                    let realm = try Realm()
-                    
-                    try realm.write {
-                        realm.add(zones.map { $0.realmZone }, update: true)
-                    }
-                } catch {
-                    print(error)
+        backgroundThread {
+            do {
+                let realm = try Realm()
+                
+                try realm.write {
+                    realm.add(zones.map { $0.realmZone }, update: true)
                 }
-            },
-            completion: nil
-        )
+            } catch {
+                print(error)
+            }
+        }
     }
     
     /**
@@ -75,29 +71,26 @@ public final class Cache {
      
      */
     public func saveLamps(lamps: [DeviceType]) {
-        backgroundThread(
-            background: {
-                do {
-                    let realm = try Realm()
-                    try realm.write {
-                        realm.add(lamps.map { $0.realmLamp }, update: true)
-                    }
-                } catch {
-                    print(error)
+        backgroundThread {
+            do {
+                let realm = try Realm()
+                try realm.write {
+                    realm.add(lamps.map { $0.realmLamp }, update: true)
                 }
-                
-            },
-            completion: nil
-        )
+            } catch {
+                print(error)
+            }
+            
+        }
     }
     
     /**
-        Returns all lamps from cache
-        
-        - throws: Realm error
+     Returns all lamps from cache
      
-        - returns: [DeviceType] array
-    */
+     - throws: Realm error
+     
+     - returns: [DeviceType] array
+     */
     public func getLamps() throws -> [DeviceType] {
         do {
             let realm = try Realm()
@@ -110,14 +103,14 @@ public final class Cache {
     
     
     /**
-        Returns single lamp based on the lamp id provided
-        
-        - parameter lampID: ID of the lamp
-        
-        - throws: Realm Error
-        
-        - returns: `DeviceType?` optional instance
-    */
+     Returns single lamp based on the lamp id provided
+     
+     - parameter lampID: ID of the lamp
+     
+     - throws: Realm Error
+     
+     - returns: `DeviceType?` optional instance
+     */
     public func getLamp(lampID: String) throws -> DeviceType? {
         do {
             let realm = try Realm()
@@ -129,14 +122,16 @@ public final class Cache {
     }
     
     /**
-        Returns all zones from cache
-        
-        - returns: [ZoneType] array of zones
-    */
+     Returns all zones from cache
+     
+     - returns: [ZoneType] array of zones
+     */
     public func getZones() throws -> [ZoneType] {
         do {
             let realm = try Realm()
-            let zones = realm.objects(RealmZone)
+            let zones = realm.objects(RealmZone).sorted("lastEditTimestamp")
+            //            let lastEdit = zones.sorted("lastEditTimestamp").first?.lastEditTimestamp.value
+            //            print(NSDate(timeIntervalSince1970: lastEdit!))
             return zones.map { $0 }
         } catch {
             throw error

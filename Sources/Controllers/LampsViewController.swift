@@ -79,13 +79,7 @@ extension LampsViewController: UITableViewDataSource {
 extension LampsViewController {
     func didTapOnMapExpandButton(button: UIButton) {
         let mapViewController = storyboard?.instantiateViewControllerWithIdentifier("mapController") as! MapViewController
-        if let lamps = lamps {
-            let annotations: [MKAnnotation] = lamps.map {
-                let lampLocation = LampLocation(location: $0.location!, name: $0.name ?? "", subtitle: "")
-                return lampLocation
-            }
-            mapViewController.annotations = annotations
-        }
+        mapViewController.annotations = mapView.annotations
         self.presentViewController(UINavigationController(rootViewController: mapViewController), animated: true, completion: nil)
     }
     
