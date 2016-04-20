@@ -44,13 +44,27 @@ public class RealmZone: Object {
     /// Zone name
     dynamic public var name = ""
     
+    public var zoneInfo: [String : AnyObject] {
+        return [
+            UpdateTimestampKey: self.lastEditTimestamp.value ?? 0.0
+        ]
+    }
+    
     override public class func primaryKey() -> String {
         return "zoneID"
+    }
+    
+    // Set ignored properties
+    override public static func ignoredProperties() -> [String] {
+        return [
+            "zoneInfo"
+        ]
     }
 }
 
 //MARK: ZoneType implementation
 extension RealmZone: ZoneType {
+    
     public var creationDate: NSDate? {
         if let creationTimestamp = creationTimestamp.value {
             return NSDate(timeIntervalSince1970: creationTimestamp / 1000)

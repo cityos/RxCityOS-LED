@@ -13,7 +13,7 @@ extension ZoneType {
         let zone = RealmZone()
         zone.zoneID = zoneID
         zone.creationTimestamp.value = creationDate?.timeIntervalSince1970
-        zone.lastEditTimestamp.value = creationDate?.timeIntervalSince1970
+        zone.lastEditTimestamp.value = zoneInfo[UpdateTimestampKey] as? Double
         zone.name = name
         
         zone.allDevices.appendContentsOf(
@@ -39,6 +39,8 @@ extension DeviceType {
         
         realmLamp.latitude.value = location?.latitude ?? 0.0
         realmLamp.longitude.value = location?.longitude ?? 0.0
+        
+        realmLamp.zoneID = deviceData["zone"] as? String
         
         return realmLamp
     }

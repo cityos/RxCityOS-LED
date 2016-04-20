@@ -48,6 +48,9 @@ public class RealmLamp: Object {
     /// Schema ID
     dynamic public var schemaID = ""
     
+    /// Zone ID
+    dynamic public var zoneID: String?
+    
     //MARK: Protocol requirement properties
     
     public var deviceData = DeviceData(deviceID: "")
