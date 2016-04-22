@@ -15,8 +15,33 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3jD-UU-jLF">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="66"/>
+                                <color key="backgroundColor" red="0.0" green="0.63921568627450975" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="66" id="MpF-Xe-6Yv"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yrd-ec-3T5">
+                                <rect key="frame" x="0.0" y="552" width="600" height="48"/>
+                                <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="y8S-4Q-hYx"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3jD-UU-jLF" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="Beg-Hl-1PR"/>
+                            <constraint firstItem="yrd-ec-3T5" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="Kb4-D7-WEr"/>
+                            <constraint firstAttribute="trailing" secondItem="yrd-ec-3T5" secondAttribute="trailing" id="Yp0-NY-2rG"/>
+                            <constraint firstItem="3jD-UU-jLF" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="aGu-Ca-Xvg"/>
+                            <constraint firstAttribute="trailing" secondItem="3jD-UU-jLF" secondAttribute="trailing" id="lW2-c5-bIu"/>
+                            <constraint firstAttribute="bottom" secondItem="yrd-ec-3T5" secondAttribute="bottom" id="w5P-0i-1SA"/>
+                        </constraints>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

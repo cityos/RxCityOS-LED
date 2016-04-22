@@ -11,8 +11,6 @@
 		B30E2F221CC4376500A4E74C /* Cache.h in Headers */ = {isa = PBXBuildFile; fileRef = B30E2F211CC4376500A4E74C /* Cache.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B30E2F261CC4376500A4E74C /* Cache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B30E2F1F1CC4376500A4E74C /* Cache.framework */; };
 		B30E2F271CC4376500A4E74C /* Cache.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B30E2F1F1CC4376500A4E74C /* Cache.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		B30E2F321CC4378900A4E74C /* RealmLampTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E2F311CC4378900A4E74C /* RealmLampTests.swift */; };
-		B30E2F341CC4378900A4E74C /* Cache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B30E2F1F1CC4376500A4E74C /* Cache.framework */; };
 		B30E2F3A1CC437ED00A4E74C /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FF117C1CC0D0AE00C1B93E /* Realm.framework */; };
 		B30E2F3B1CC437ED00A4E74C /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FF117D1CC0D0AE00C1B93E /* RealmSwift.framework */; };
 		B30E2F3C1CC437ED00A4E74C /* CoreCityOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FF11401CBFF19100C1B93E /* CoreCityOS.framework */; };
@@ -22,6 +20,9 @@
 		B30E2F431CC4CE1200A4E74C /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E2F421CC4CE1200A4E74C /* Cache.swift */; };
 		B30E2F451CC4CFA000A4E74C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E2F441CC4CFA000A4E74C /* Extensions.swift */; };
 		B30E2F481CC4E64B00A4E74C /* LampTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E2F471CC4E64B00A4E74C /* LampTableViewCell.swift */; };
+		B33F0FB11CC7B5EA0028BDFF /* Cache_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33F0FB01CC7B5EA0028BDFF /* Cache_Tests.swift */; };
+		B33F0FB31CC7B5EA0028BDFF /* Cache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B30E2F1F1CC4376500A4E74C /* Cache.framework */; };
+		B33F0FD81CCA85700028BDFF /* ManageLampViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33F0FD71CCA85700028BDFF /* ManageLampViewController.swift */; };
 		B3E733B61CC4EB3F00E6F442 /* Flowthings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FF115D1CBFF27300C1B93E /* Flowthings.framework */; };
 		B3E733B71CC4EB4400E6F442 /* Flowthings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FF115D1CBFF27300C1B93E /* Flowthings.framework */; };
 		B3E733B81CC4EBDA00E6F442 /* Flowthings.h in Headers */ = {isa = PBXBuildFile; fileRef = B3FF115F1CBFF27300C1B93E /* Flowthings.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -71,7 +72,7 @@
 			remoteGlobalIDString = B30E2F1E1CC4376500A4E74C;
 			remoteInfo = Cache;
 		};
-		B30E2F351CC4378900A4E74C /* PBXContainerItemProxy */ = {
+		B33F0FB41CC7B5EA0028BDFF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B3FF10FA1CBFDFC600C1B93E /* Project object */;
 			proxyType = 1;
@@ -118,14 +119,15 @@
 		B30E2F1F1CC4376500A4E74C /* Cache.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Cache.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B30E2F211CC4376500A4E74C /* Cache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cache.h; sourceTree = "<group>"; };
 		B30E2F231CC4376500A4E74C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B30E2F2F1CC4378900A4E74C /* Cache Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Cache Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B30E2F311CC4378900A4E74C /* RealmLampTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmLampTests.swift; sourceTree = "<group>"; };
-		B30E2F331CC4378900A4E74C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B30E2F3D1CC4380E00A4E74C /* RealmLamp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmLamp.swift; sourceTree = "<group>"; };
 		B30E2F401CC4CA1600A4E74C /* RealmZone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmZone.swift; sourceTree = "<group>"; };
 		B30E2F421CC4CE1200A4E74C /* Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		B30E2F441CC4CFA000A4E74C /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		B30E2F471CC4E64B00A4E74C /* LampTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LampTableViewCell.swift; sourceTree = "<group>"; };
+		B33F0FAE1CC7B5EA0028BDFF /* Cache Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Cache Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B33F0FB01CC7B5EA0028BDFF /* Cache_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache_Tests.swift; sourceTree = "<group>"; };
+		B33F0FB21CC7B5EA0028BDFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B33F0FD71CCA85700028BDFF /* ManageLampViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageLampViewController.swift; sourceTree = "<group>"; };
 		B3E733BD1CC4F60E00E6F442 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		B3FF11021CBFDFC600C1B93E /* CityOS-LED.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CityOS-LED.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3FF11181CBFDFDB00C1B93E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -173,11 +175,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B30E2F2C1CC4378900A4E74C /* Frameworks */ = {
+		B33F0FAB1CC7B5EA0028BDFF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B30E2F341CC4378900A4E74C /* Cache.framework in Frameworks */,
+				B33F0FB31CC7B5EA0028BDFF /* Cache.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,11 +231,11 @@
 			path = Cache;
 			sourceTree = "<group>";
 		};
-		B30E2F301CC4378900A4E74C /* Cache Tests */ = {
+		B33F0FAF1CC7B5EA0028BDFF /* Cache Tests */ = {
 			isa = PBXGroup;
 			children = (
-				B30E2F311CC4378900A4E74C /* RealmLampTests.swift */,
-				B30E2F331CC4378900A4E74C /* Info.plist */,
+				B33F0FB01CC7B5EA0028BDFF /* Cache_Tests.swift */,
+				B33F0FB21CC7B5EA0028BDFF /* Info.plist */,
 			);
 			path = "Cache Tests";
 			sourceTree = "<group>";
@@ -244,7 +246,7 @@
 				B3FF11311CBFE34400C1B93E /* Assets */,
 				B30E2F201CC4376500A4E74C /* Cache */,
 				B3FF115E1CBFF27300C1B93E /* Flowthings */,
-				B30E2F301CC4378900A4E74C /* Cache Tests */,
+				B33F0FAF1CC7B5EA0028BDFF /* Cache Tests */,
 				B3FF113F1CBFF17D00C1B93E /* Frameworks */,
 				B3FF114A1CBFF1D900C1B93E /* LightFactory */,
 				B3FF11031CBFDFC600C1B93E /* Products */,
@@ -259,7 +261,7 @@
 				B3FF11491CBFF1D900C1B93E /* LightFactory.framework */,
 				B3FF115D1CBFF27300C1B93E /* Flowthings.framework */,
 				B30E2F1F1CC4376500A4E74C /* Cache.framework */,
-				B30E2F2F1CC4378900A4E74C /* Cache Tests.xctest */,
+				B33F0FAE1CC7B5EA0028BDFF /* Cache Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -288,6 +290,7 @@
 				B3FF112B1CBFE1F900C1B93E /* ChartsViewController.swift */,
 				B3FF112D1CBFE20A00C1B93E /* ReadingsViewController.swift */,
 				B3E733BD1CC4F60E00E6F442 /* MapViewController.swift */,
+				B33F0FD71CCA85700028BDFF /* ManageLampViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -428,22 +431,22 @@
 			productReference = B30E2F1F1CC4376500A4E74C /* Cache.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		B30E2F2E1CC4378900A4E74C /* Cache Tests */ = {
+		B33F0FAD1CC7B5EA0028BDFF /* Cache Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B30E2F371CC4378900A4E74C /* Build configuration list for PBXNativeTarget "Cache Tests" */;
+			buildConfigurationList = B33F0FB61CC7B5EA0028BDFF /* Build configuration list for PBXNativeTarget "Cache Tests" */;
 			buildPhases = (
-				B30E2F2B1CC4378900A4E74C /* Sources */,
-				B30E2F2C1CC4378900A4E74C /* Frameworks */,
-				B30E2F2D1CC4378900A4E74C /* Resources */,
+				B33F0FAA1CC7B5EA0028BDFF /* Sources */,
+				B33F0FAB1CC7B5EA0028BDFF /* Frameworks */,
+				B33F0FAC1CC7B5EA0028BDFF /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				B30E2F361CC4378900A4E74C /* PBXTargetDependency */,
+				B33F0FB51CC7B5EA0028BDFF /* PBXTargetDependency */,
 			);
 			name = "Cache Tests";
 			productName = "Cache Tests";
-			productReference = B30E2F2F1CC4378900A4E74C /* Cache Tests.xctest */;
+			productReference = B33F0FAE1CC7B5EA0028BDFF /* Cache Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		B3FF11011CBFDFC600C1B93E /* CityOS-LED */ = {
@@ -516,7 +519,7 @@
 					B30E2F1E1CC4376500A4E74C = {
 						CreatedOnToolsVersion = 7.3;
 					};
-					B30E2F2E1CC4378900A4E74C = {
+					B33F0FAD1CC7B5EA0028BDFF = {
 						CreatedOnToolsVersion = 7.3;
 					};
 					B3FF11011CBFDFC600C1B93E = {
@@ -547,7 +550,7 @@
 				B3FF11481CBFF1D900C1B93E /* LightFactory */,
 				B3FF115C1CBFF27300C1B93E /* Flowthings */,
 				B30E2F1E1CC4376500A4E74C /* Cache */,
-				B30E2F2E1CC4378900A4E74C /* Cache Tests */,
+				B33F0FAD1CC7B5EA0028BDFF /* Cache Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -560,7 +563,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B30E2F2D1CC4378900A4E74C /* Resources */ = {
+		B33F0FAC1CC7B5EA0028BDFF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -607,11 +610,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B30E2F2B1CC4378900A4E74C /* Sources */ = {
+		B33F0FAA1CC7B5EA0028BDFF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B30E2F321CC4378900A4E74C /* RealmLampTests.swift in Sources */,
+				B33F0FB11CC7B5EA0028BDFF /* Cache_Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -623,6 +626,7 @@
 				B3FF113D1CBFEE1400C1B93E /* DataReadingTableViewCell.swift in Sources */,
 				B3FF112A1CBFE1E700C1B93E /* LampsViewController.swift in Sources */,
 				B3FF11301CBFE30A00C1B93E /* Extensions.swift in Sources */,
+				B33F0FD81CCA85700028BDFF /* ManageLampViewController.swift in Sources */,
 				B3FF112C1CBFE1F900C1B93E /* ChartsViewController.swift in Sources */,
 				B3FF11281CBFE1D200C1B93E /* ZonesTableViewController.swift in Sources */,
 				B30E2F481CC4E64B00A4E74C /* LampTableViewCell.swift in Sources */,
@@ -664,10 +668,10 @@
 			target = B30E2F1E1CC4376500A4E74C /* Cache */;
 			targetProxy = B30E2F241CC4376500A4E74C /* PBXContainerItemProxy */;
 		};
-		B30E2F361CC4378900A4E74C /* PBXTargetDependency */ = {
+		B33F0FB51CC7B5EA0028BDFF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B30E2F1E1CC4376500A4E74C /* Cache */;
-			targetProxy = B30E2F351CC4378900A4E74C /* PBXContainerItemProxy */;
+			targetProxy = B33F0FB41CC7B5EA0028BDFF /* PBXContainerItemProxy */;
 		};
 		B3E733BC1CC4EC0300E6F442 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -752,9 +756,10 @@
 			};
 			name = Release;
 		};
-		B30E2F381CC4378900A4E74C /* Debug */ = {
+		B33F0FB71CC7B5EA0028BDFF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/iOS";
 				INFOPLIST_FILE = "Cache Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.cityos.Cache-Tests";
@@ -762,9 +767,10 @@
 			};
 			name = Debug;
 		};
-		B30E2F391CC4378900A4E74C /* Release */ = {
+		B33F0FB81CC7B5EA0028BDFF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/iOS";
 				INFOPLIST_FILE = "Cache Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.cityos.Cache-Tests";
@@ -997,11 +1003,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B30E2F371CC4378900A4E74C /* Build configuration list for PBXNativeTarget "Cache Tests" */ = {
+		B33F0FB61CC7B5EA0028BDFF /* Build configuration list for PBXNativeTarget "Cache Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B30E2F381CC4378900A4E74C /* Debug */,
-				B30E2F391CC4378900A4E74C /* Release */,
+				B33F0FB71CC7B5EA0028BDFF /* Debug */,
+				B33F0FB81CC7B5EA0028BDFF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
