@@ -24,6 +24,10 @@ public class RealmDeviceID: Object {
             return device
         }
     }
+    
+    override public class func primaryKey() -> String {
+        return "deviceID"
+    }
 }
 
 /// Defines Lamp Zone used in Realms
