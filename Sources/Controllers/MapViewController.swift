@@ -22,10 +22,12 @@ class MapViewController: UIViewController {
         doneBarButton.setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.whiteColor()], forState: UIControlState.Normal)
         navigationItem.rightBarButtonItem = doneBarButton
         
+        mapView.delegate = self
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
         if let annotations = annotations {
             mapView.showAnnotations(annotations, animated: true)
         }
@@ -51,4 +53,20 @@ class MapViewController: UIViewController {
     }
     */
 
+}
+
+extension MapViewController: MKMapViewDelegate {
+    
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+        return LampLocation.annotationView(mapView, viewForAnnotation: annotation)
+    }
+    
+    
+    func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        if let annotation = view.annotation as? LampLocation {
+            let manageController = storyboard!.instantiateViewControllerWithIdentifier("manageLampController") as! ManageLampViewController
+            manageController.lamp = annotation.lamp
+            self.showViewController(manageController, sender: self)
+        }
+    }
 }
