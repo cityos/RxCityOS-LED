@@ -9,6 +9,11 @@
 import protocol CoreCityOS.ZoneType
 import protocol CoreCityOS.DeviceType
 import RealmSwift
+import RxSwift
+
+public enum CacheError: ErrorType {
+    case RealmError(ErrorType)
+}
 
 /**
  Cache class is used to offload Realm caching to background threads
@@ -89,16 +94,25 @@ public final class Cache {
      
      - throws: Realm error
      
-     - returns: [DeviceType] array
+     - returns: Observable<[DeviceType]>
      */
-    public func getLamps() throws -> [DeviceType] {
-        do {
-            let realm = try Realm()
-            let lamps = realm.objects(RealmLamp)
-            return lamps.map { $0 }
-        } catch {
-            throw error
+    public func getLamps() throws -> Observable<[DeviceType]> {
+        return Observable.create { observer in
+            var realm: Realm?
+            
+            do {
+                realm = try Realm()
+                let lamps = realm!.objects(RealmLamp)
+                observer.on(.Next(lamps.map {$0 as DeviceType }))
+            } catch {
+                observer.on(.Error(CacheError.RealmError(error)))
+            }
+            
+            return AnonymousDisposable {
+                realm?.cancelWrite()
+            }
         }
+        
     }
     
     
@@ -117,7 +131,7 @@ public final class Cache {
             let lamp = realm.objectForPrimaryKey(RealmLamp.self, key: lampID)
             return lamp as? DeviceType
         } catch {
-            throw error
+            throw CacheError.RealmError(error)
         }
     }
     
@@ -135,6 +149,23 @@ public final class Cache {
             return zones.map { $0 }
         } catch {
             throw error
+        }
+    }
+    
+    /**
+        Delete all objects from Realm
+     
+        - throws: `RealmError`
+    */
+    internal func deleteAll() throws {
+        do {
+            let realm = try Realm()
+            
+            try realm.write{
+                realm.deleteAll()
+            }
+        } catch {
+            throw CacheError.RealmError(error)
         }
     }
 }

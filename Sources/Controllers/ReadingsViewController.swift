@@ -9,11 +9,15 @@
 import UIKit
 import CoreCityOS
 import LightFactory
+import RxSwift
 
 class ReadingsTableViewController: UIViewController {
 
     //MARK: Class variables
     var device: DeviceType?
+    
+    let viewModel = ReadingsViewModel()
+    let disposeBag = DisposeBag()
     
     var grandientBackgroundLayer = Gradient.mainGradient()
     @IBOutlet weak var tableView: UITableView!
@@ -23,8 +27,8 @@ class ReadingsTableViewController: UIViewController {
         super.viewDidLoad()
         self.title = "Live Readings"
         
-        tableView.dataSource = self
-        tableView.delegate = self
+//        tableView.dataSource = self
+//        tableView.delegate = self
         tableView.backgroundColor = UIColor.clearColor()
         tableView.separatorColor = UIColor(white: 1, alpha: 0.6)
         tableView.rowHeight = 60
@@ -34,19 +38,28 @@ class ReadingsTableViewController: UIViewController {
         addRefreshControl()
         
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        LightFactory.sharedInstance.retrieveLatestLampData(limit: 1) {
-            response in
-            if let device = response.data?.first {
-                dispatch_async(dispatch_get_main_queue(), {
-                    UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                    self.device = device
-                    self.tableView.reloadData()
-                    UIView.animateWithDuration(0.4) {
-                        self.tableView.alpha = 1
-                    }
-                })
+        
+        
+        viewModel.readings
+            .observeOn(MainScheduler.instance)
+            .doOnCompleted {
+                completed in
+                UIView.animateWithDuration(0.4) {
+                    self.tableView.alpha = 1
+                }
+                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
             }
-        }
+            .doOnError {
+                error in
+                print(error)
+            }
+            .retry(3)
+            .bindTo(tableView.rx_itemsWithCellIdentifier("dataCell",
+                cellType: DataReadingTableViewCell.self)) {
+                row, dataType, cell in
+                cell.dataType = dataType
+            }
+            .addDisposableTo(disposeBag)
     }
     
     override func viewDidLayoutSubviews() {
@@ -57,28 +70,6 @@ class ReadingsTableViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-}
-
-extension ReadingsTableViewController: UITableViewDataSource, UITableViewDelegate {
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let device = device {
-            return device.dataCollection.allReadings.count
-        }
-        return 0
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("dataCell", forIndexPath: indexPath) as! DataReadingTableViewCell
-        
-        cell.dataType = device?.dataCollection.allReadings[indexPath.row]
-        cell.contentView.backgroundColor = .clearColor()
-        cell.backgroundColor = .clearColor()
-        return cell
     }
 }
 

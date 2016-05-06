@@ -11,12 +11,19 @@ import MapKit
 import CoreCityOS
 import LightFactory
 import Cache
+import RxSwift
+import RxCocoa
 
 class ZonesTableViewController: UITableViewController {
     
+    //MARK: Views
     @IBOutlet weak var mapView: MKMapView!
     
+    /// Zones view controller manages
     var zones: [ZoneType]?
+    
+    let disposeBag = DisposeBag()
+    lazy var viewModel = ZonesViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,68 +32,62 @@ class ZonesTableViewController: UITableViewController {
         
         mapView.addMapExpandButton()
         mapView.expandButton?.enabled = false
+        mapView.delegate = self
         
-        LightFactory.sharedInstance.retrieveZones {
-            zones, error in
-            if error != nil {
-                // error
-            } else {
-                self.zones = zones
-                dispatch_async(dispatch_get_main_queue(), {
-                    self.tableView.reloadData()
-                })
+        viewModel.zones
+            .doOnError {
+                error in
+                print("ERRRRRRRRRRRRRR")
             }
-        }
-        
-        LightFactory.sharedInstance.retrieveAllLamps {
-            lamps, error in
-            if error != nil {
-                // error
-            } else {
-                self.mapView.expandButton?.enabled = true
-                self.mapView.showAnnotations(lamps!.map {
-                    let x = LampLocation(location: $0.location!, name: $0.name!, subtitle: nil)
-                    return x
-                    }, animated: true)
+            .bindTo(tableView.rx_itemsWithCellIdentifier("zoneCell", cellType: ZoneTableViewCell.self)) { row, zone, cell in
+                cell.zoneNameLabel.text = zone.name
             }
-        }
+            .addDisposableTo(disposeBag)
         
-        mapView.expandButton?.addTarget(self, action: #selector(didTapOnMapExpandButton(_:)), forControlEvents: .TouchUpInside)
+        viewModel.lamps
+            .subscribe {
+                event in
+                if let lamps = event.element {
+                    self.mapView.expandButton?.enabled = true
+                    self.mapView.showAnnotations(lamps.map { LampLocation(lamp: $0) }, animated: false )
+                }
+                
+                if let error = event.error {
+                    print(error)
+                }
+            }.addDisposableTo(disposeBag)
+        
+        mapView.expandButton?.addTarget(self,
+                                        action: #selector(didTapOnMapExpandButton(_:)),
+                                        forControlEvents: .TouchUpInside)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    // MARK: - Table view data source
-    
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-    
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        if let _ = zones {
-            return zones!.count
-        }
-        return 0
-    }
-    
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("zoneCell", forIndexPath: indexPath) as! ZoneTableViewCell
-        
-        cell.zoneNameLabel.text = self.zones![indexPath.row].name
-        
-        return cell
-    }
 }
 
-extension ZonesTableViewController {
+extension ZonesTableViewController: MKMapViewDelegate {
     func didTapOnMapExpandButton(button: UIButton) {
         let mapViewController = storyboard?.instantiateViewControllerWithIdentifier("mapController") as! MapViewController
         mapViewController.annotations = self.mapView.annotations
-        self.presentViewController(UINavigationController(rootViewController: mapViewController), animated: true, completion: nil)
+        self.presentViewController(
+            UINavigationController(rootViewController: mapViewController),
+            animated: true,
+            completion: nil
+        )
+    }
+    
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+        return LampLocation.annotationView(mapView, viewForAnnotation: annotation)
+    }
+    
+    func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        if let annotation = view.annotation as? LampLocation {
+            let manageController = storyboard!.instantiateViewControllerWithIdentifier("manageLampController") as! ManageLampViewController
+            manageController.lamp = annotation.lamp
+            self.showViewController(manageController, sender: self)
+        }
     }
 }

@@ -10,9 +10,9 @@ import class Foundation.NSJSONSerialization
 import CoreCityOS
 
 /**
-    These keys are used in serialization process to provide additional
-    data about the lamps
-*/
+ These keys are used in serialization process to provide additional
+ data about the lamps
+ */
 
 /// Last edit timestamp key
 public let LightFactoryLastUpdateKey = "update"
@@ -21,23 +21,23 @@ public let LightFactoryLastUpdateKey = "update"
 public let LightFactoryZoneKey = "zone"
 
 /**
-    Use serializer class to serialize `NSData` returned from the network request
-    to the `CoreCityOS` objects.
+ Use serializer class to serialize `NSData` returned from the network request
+ to the `CoreCityOS` objects.
  
-    `NSData` objects must be returned from the Flowthings API, otherwise Serializer
-    isn't going to work.
-*/
+ `NSData` objects must be returned from the Flowthings API, otherwise Serializer
+ isn't going to work.
+ */
 class Serializer {
     
     /**
-        Serializes Flowthings drop from `In` flow to `[DeviceType]` array
-        
-        - parameter data: `NSData` object used in serialization
-        
-        - throws: `SerializerError`
+     Serializes Flowthings drop from `In` flow to `[DeviceType]` array
      
-        - returns: `[DeviceType]` array of instances conforming DeviceType protocol
-    */
+     - parameter data: `NSData` object used in serialization
+     
+     - throws: `SerializerError`
+     
+     - returns: `[DeviceType]` array of instances conforming DeviceType protocol
+     */
     class func serializeLiveDrop(data: NSData) throws -> [DeviceType] {
         var jsonData: [String:AnyObject]!
         
@@ -80,13 +80,13 @@ class Serializer {
     }
     
     /**
-         Serializes Flowthings drop from `Zone` flow to `[ZoneType]` array
-         
-         - parameter data: `NSData` object used in serialization
-         
-         - throws: `SerializerError`
-         
-         - returns: `[ZoneType]` array of instances conforming ZoneType protocol
+     Serializes Flowthings drop from `Zone` flow to `[ZoneType]` array
+     
+     - parameter data: `NSData` object used in serialization
+     
+     - throws: `SerializerError`
+     
+     - returns: `[ZoneType]` array of instances conforming ZoneType protocol
      */
     class func serializeZoneDrop(data: NSData) throws -> [ZoneType] {
         var jsonData: [String:AnyObject]!
@@ -120,6 +120,8 @@ class Serializer {
             }
             
             let zoneID = body[i]["id"] as! String
+            let creationDate = body[i]["creationDate"] as! Double
+            let lastEditDate = body[i]["lastEditDate"] as? Double
             
             var lamps = [DeviceType]()
             for lampID in lampsIDs {
@@ -127,7 +129,10 @@ class Serializer {
                 lamps.append(lamp)
             }
             
-            let zone = LampZone(name: name, zoneID: zoneID, devices: lamps)
+            var zone = LampZone(name: name, zoneID: zoneID, devices: lamps)
+            zone.creationDate = NSDate(timeIntervalSince1970: creationDate / 1000)
+            zone.zoneInfo[LightFactoryLastUpdateKey] = lastEditDate ?? 0.0
+            
             zones.append(zone)
         }
         
@@ -135,14 +140,14 @@ class Serializer {
     }
     
     /**
-         Serializes Flowthings drop from `Lamps` flow to `[DeviceType]` array
-         
-         - parameter data: `NSData` object used in serialization
-         
-         - throws: `SerializerError`
-         
-         - returns: `[DeviceType]` array of instances conforming DeviceType protocol
-    */
+     Serializes Flowthings drop from `Lamps` flow to `[DeviceType]` array
+     
+     - parameter data: `NSData` object used in serialization
+     
+     - throws: `SerializerError`
+     
+     - returns: `[DeviceType]` array of instances conforming DeviceType protocol
+     */
     class func serializeLampDrop(data: NSData) throws -> [DeviceType] {
         var jsonData: [String:AnyObject]!
         

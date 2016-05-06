@@ -1,2 +1,3 @@
-github "cityos/CoreCityOS" "e6d9fa2d135065ebc354c768664aeffd65e59cbe"
-github "realm/realm-cocoa" "v0.98.8"
+github "cityos/CoreCityOS" "2a1a24751f321a63a5d6f1cd39384bd496ba695b"
+github "ReactiveX/RxSwift" "2.4"
+github "realm/realm-cocoa" "v0.101.0"

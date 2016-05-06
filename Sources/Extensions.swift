@@ -140,7 +140,6 @@ extension LiveDataType {
     }
 }
 
-
 extension MKMapView {
     
     var expandButton: UIButton? {

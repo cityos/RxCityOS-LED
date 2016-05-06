@@ -17,7 +17,8 @@ class LampTableViewCell: UITableViewCell {
     var lamp: DeviceType? {
         didSet {
             if let lamp = lamp {
-                self.lampNameLabel.text = lamp.name
+                lampNameLabel.text = lamp.name
+                zoneNameLabel.text = lamp.deviceData["zone"] as? String ?? ""
             }
         }
     }

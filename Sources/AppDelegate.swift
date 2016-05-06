@@ -33,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             tabBarController.selectedIndex = 2
         }
         
-        print(Realm.Configuration.defaultConfiguration.path!)
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
         
         return true
     }

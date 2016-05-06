@@ -10,6 +10,7 @@ import Foundation
 
 public class FlowRequest {
     var flowID: String
+    
     public var start = 0
     public var limit = 20
     public var filter: String?

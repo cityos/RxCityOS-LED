@@ -9,6 +9,7 @@
 import CoreCityOS
 import Flowthings
 import Cache
+import RxSwift
 
 public typealias LightFactoryCompletionBlock = (
     data: [DeviceType]?,
@@ -19,73 +20,120 @@ public final class LightFactory {
     public static var sharedInstance = LightFactory()
     
     /// Retrieves data from in flow
-    public func retrieveLatestLampData(limit limit: UInt, completion: LightFactoryCompletionBlock) {
+    public func retrieveLatestLampData(limit limit: UInt) -> Observable<[DeviceType]> {
         let request = FlowRequest(flow: Flows.In)
         request.filter = "limit=\(limit)&hints=0"
         
-        Flowthings.sharedInstance.find(request) {
-            response in
-            
-            if response.error != nil {
-                completion(data: nil, error: response.error!)
-            } else {
-                if let data = response.data {
-                    do {
-                        let devices = try Serializer.serializeLiveDrop(data)
-                        completion(data: devices, error: nil)
-                    } catch {
-                        completion(data: nil, error: error)
+        return Observable.create { observer in
+            let task = Flowthings.sharedInstance.find(request) {
+                response in
+                
+                if response.error != nil {
+                    observer.on(.Error(response.error!))
+                } else {
+                    if let data = response.data {
+                        do {
+                            let devices = try Serializer.serializeLiveDrop(data)
+                            if devices.count > 0 {
+                                observer.on(.Next(devices))
+                                observer.on(.Completed)
+                            }
+                        } catch {
+                            observer.on(.Error(error))
+                        }
+                        
                     }
-                    
                 }
             }
+            task.resume()
+            
+            return AnonymousDisposable {
+                task.cancel()
+            }
         }
+        
+        
     }
     
-    public func retrieveZones(completion: (zones: [ZoneType]?, error: ErrorType?) -> ()) {
-        let request = FlowRequest(flow: Flows.Zones)
-        request.filter = "hints=0"
-        
-        Flowthings.sharedInstance.find(request) {
-            response in
+    public func retrieveZones() -> Observable<[ZoneType]> {
+        return Observable.create { observer in
+            do {
+                let zones = try Cache.sharedCache.getZones()
+                if zones.count > 0 {
+                    observer.on(.Next(zones))
+                }
+            } catch {
+                observer.on(.Error(error))
+            }
             
-            if response.error != nil {
-                completion(zones: nil, error: response.error!)
-            } else {
-                if let data = response.data {
-                    do {
-                        let zones = try Serializer.serializeZoneDrop(data)
-                        Cache.sharedCache.saveZones(zones)
-                        completion(zones: zones, error: nil)
-                    } catch {
-                        completion(zones: nil, error: error)
+            let request = FlowRequest(flow: Flows.Zones)
+            request.filter = "hints=0"
+            
+            let task = Flowthings.sharedInstance.find(request) {
+                response in
+                
+                if response.error != nil {
+                    observer.on(.Error(response.error!))
+                } else {
+                    if let data = response.data {
+                        do {
+                            let zones = try Serializer.serializeZoneDrop(data)
+                            Cache.sharedCache.saveZones(zones)
+                            observer.on(.Next(zones))
+                            observer.on(.Completed)
+                        } catch {
+                            observer.on(.Error(error))
+                        }
                     }
                 }
             }
+            
+            return AnonymousDisposable {
+                task.cancel()
+            }
         }
+        
     }
     
-    public func retrieveAllLamps(completion: (lamps: [DeviceType]?, error: ErrorType?) -> ()) {
-        let request = FlowRequest(flow: Flows.Lamps)
-        request.filter = "limit=100&hints=0&filter=elems.schema IN \(Lamp.validSchemas)"
-        
-        Flowthings.sharedInstance.find(request) {
-            response in
+    public func retrieveAllLamps() -> Observable<[DeviceType]> {
+        return Observable.create { observer in
+            do {
+                let lamps = try Cache.sharedCache.getLamps()
+                
+                lamps.subscribe(observer)
+            } catch {
+                observer.on(.Error(error))
+            }
             
-            if response.error != nil {
-                completion(lamps: nil, error: response.error!)
-            } else {
-                if let data = response.data {
-                    do {
-                        let lamps = try Serializer.serializeLampDrop(data)
-                        Cache.sharedCache.saveLamps(lamps)
-                        completion(lamps: lamps, error: nil)
-                    } catch {
-                        completion(lamps: nil, error: error)
+            let request = FlowRequest(flow: Flows.Lamps)
+            request.filter = "limit=100&hints=0&filter=elems.schema IN \(Lamp.validSchemas)"
+            
+            let task = Flowthings.sharedInstance.find(request) {
+                response in
+                
+                if response.error != nil {
+                    observer.on(.Error(response.error!))
+                } else {
+                    if let data = response.data {
+                        do {
+                            
+                            let lamps = try Serializer.serializeLampDrop(data)
+                            Cache.sharedCache.saveLamps(lamps)
+                            observer.on(.Next(lamps))
+                            observer.on(.Completed)
+                        } catch {
+                            observer.on(.Error(error))
+                        }
                     }
                 }
             }
+            task.resume()
+            
+            return AnonymousDisposable {
+                task.cancel()
+            }
         }
+        
     }
 }
 

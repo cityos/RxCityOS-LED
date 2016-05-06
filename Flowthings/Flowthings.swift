@@ -15,7 +15,7 @@ public class Flowthings {
     
     static var session = NSURLSession.sharedSession()
     
-    public func find(request: FlowRequest, completion: FlowthingsCompletionBlock) {
+    public func find(request: FlowRequest, completion: FlowthingsCompletionBlock) -> NSURLSessionTask {
         let request = request.createURL("ceco", token: "TWEFiZvO0KtvWMx5p24JvBbFhBA1oDL3")
         
         let task = Flowthings.session.dataTaskWithRequest(request) { data, response, error in
@@ -28,6 +28,6 @@ public class Flowthings {
             }
         }
         
-        task.resume()
+        return task
     }
 }

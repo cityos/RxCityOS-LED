@@ -8,15 +8,14 @@
 
 import Foundation
 import CoreCityOS
-import Realm
 import RealmSwift
-import Cache
 
 public struct LampZone: ZoneType {
     public var creationDate: NSDate? = NSDate()
     public var name: String
     public var zoneID: String
     public var devices: [DeviceType]
+    public var zoneInfo: [String : AnyObject] = [:]
     
     public init(name: String, zoneID: String, devices: [DeviceType]) {
         self.name = name

@@ -23,6 +23,15 @@
 		B33F0FB11CC7B5EA0028BDFF /* Cache_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33F0FB01CC7B5EA0028BDFF /* Cache_Tests.swift */; };
 		B33F0FB31CC7B5EA0028BDFF /* Cache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B30E2F1F1CC4376500A4E74C /* Cache.framework */; };
 		B33F0FD81CCA85700028BDFF /* ManageLampViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33F0FD71CCA85700028BDFF /* ManageLampViewController.swift */; };
+		B34552F11CCB965100034F11 /* LampControlTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34552F01CCB965100034F11 /* LampControlTableViewCell.swift */; };
+		B3D266731CDC94E50040EE95 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D266721CDC94E50040EE95 /* RxSwift.framework */; };
+		B3D266741CDC94E50040EE95 /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B3D266721CDC94E50040EE95 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B3D266751CDC98110040EE95 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D266721CDC94E50040EE95 /* RxSwift.framework */; };
+		B3D266781CDCA07D0040EE95 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D266771CDCA07D0040EE95 /* RxCocoa.framework */; };
+		B3D266791CDCA07D0040EE95 /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B3D266771CDCA07D0040EE95 /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B3D2667C1CDCC3DB0040EE95 /* ZonesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D2667B1CDCC3DB0040EE95 /* ZonesViewModel.swift */; };
+		B3D2667F1CDCDE110040EE95 /* ReadingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D2667E1CDCDE110040EE95 /* ReadingsViewModel.swift */; };
+		B3D266801CDD08FA0040EE95 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D266721CDC94E50040EE95 /* RxSwift.framework */; };
 		B3E733B61CC4EB3F00E6F442 /* Flowthings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FF115D1CBFF27300C1B93E /* Flowthings.framework */; };
 		B3E733B71CC4EB4400E6F442 /* Flowthings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FF115D1CBFF27300C1B93E /* Flowthings.framework */; };
 		B3E733B81CC4EBDA00E6F442 /* Flowthings.h in Headers */ = {isa = PBXBuildFile; fileRef = B3FF115F1CBFF27300C1B93E /* Flowthings.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -104,7 +113,9 @@
 			files = (
 				B3FF117F1CC0D0AE00C1B93E /* Realm.framework in Embed Frameworks */,
 				B3E733BA1CC4EC0300E6F442 /* Flowthings.framework in Embed Frameworks */,
+				B3D266741CDC94E50040EE95 /* RxSwift.framework in Embed Frameworks */,
 				B3FF11811CC0D0AE00C1B93E /* RealmSwift.framework in Embed Frameworks */,
+				B3D266791CDCA07D0040EE95 /* RxCocoa.framework in Embed Frameworks */,
 				B3FF11511CBFF1D900C1B93E /* LightFactory.framework in Embed Frameworks */,
 				B3FF11421CBFF19100C1B93E /* CoreCityOS.framework in Embed Frameworks */,
 				B30E2F271CC4376500A4E74C /* Cache.framework in Embed Frameworks */,
@@ -128,6 +139,11 @@
 		B33F0FB01CC7B5EA0028BDFF /* Cache_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache_Tests.swift; sourceTree = "<group>"; };
 		B33F0FB21CC7B5EA0028BDFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B33F0FD71CCA85700028BDFF /* ManageLampViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageLampViewController.swift; sourceTree = "<group>"; };
+		B34552F01CCB965100034F11 /* LampControlTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LampControlTableViewCell.swift; sourceTree = "<group>"; };
+		B3D266721CDC94E50040EE95 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		B3D266771CDCA07D0040EE95 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		B3D2667B1CDCC3DB0040EE95 /* ZonesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZonesViewModel.swift; sourceTree = "<group>"; };
+		B3D2667E1CDCDE110040EE95 /* ReadingsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadingsViewModel.swift; sourceTree = "<group>"; };
 		B3E733BD1CC4F60E00E6F442 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		B3FF11021CBFDFC600C1B93E /* CityOS-LED.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CityOS-LED.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3FF11181CBFDFDB00C1B93E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -171,6 +187,7 @@
 			files = (
 				B30E2F3A1CC437ED00A4E74C /* Realm.framework in Frameworks */,
 				B30E2F3B1CC437ED00A4E74C /* RealmSwift.framework in Frameworks */,
+				B3D266801CDD08FA0040EE95 /* RxSwift.framework in Frameworks */,
 				B30E2F3C1CC437ED00A4E74C /* CoreCityOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -189,7 +206,9 @@
 			files = (
 				B3E733B61CC4EB3F00E6F442 /* Flowthings.framework in Frameworks */,
 				B3FF117E1CC0D0AE00C1B93E /* Realm.framework in Frameworks */,
+				B3D266731CDC94E50040EE95 /* RxSwift.framework in Frameworks */,
 				B3FF11801CC0D0AE00C1B93E /* RealmSwift.framework in Frameworks */,
+				B3D266781CDCA07D0040EE95 /* RxCocoa.framework in Frameworks */,
 				B3FF11501CBFF1D900C1B93E /* LightFactory.framework in Frameworks */,
 				B3FF11411CBFF19100C1B93E /* CoreCityOS.framework in Frameworks */,
 				B30E2F261CC4376500A4E74C /* Cache.framework in Frameworks */,
@@ -200,6 +219,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3D266751CDC98110040EE95 /* RxSwift.framework in Frameworks */,
 				B3E733B71CC4EB4400E6F442 /* Flowthings.framework in Frameworks */,
 				B30E2F3F1CC440D400A4E74C /* Cache.framework in Frameworks */,
 				B3FF11551CBFF1E900C1B93E /* CoreCityOS.framework in Frameworks */,
@@ -240,13 +260,22 @@
 			path = "Cache Tests";
 			sourceTree = "<group>";
 		};
+		B3D2667A1CDCA3120040EE95 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				B3D2667B1CDCC3DB0040EE95 /* ZonesViewModel.swift */,
+				B3D2667E1CDCDE110040EE95 /* ReadingsViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
 		B3FF10F91CBFDFC600C1B93E = {
 			isa = PBXGroup;
 			children = (
 				B3FF11311CBFE34400C1B93E /* Assets */,
 				B30E2F201CC4376500A4E74C /* Cache */,
-				B3FF115E1CBFF27300C1B93E /* Flowthings */,
 				B33F0FAF1CC7B5EA0028BDFF /* Cache Tests */,
+				B3FF115E1CBFF27300C1B93E /* Flowthings */,
 				B3FF113F1CBFF17D00C1B93E /* Frameworks */,
 				B3FF114A1CBFF1D900C1B93E /* LightFactory */,
 				B3FF11031CBFDFC600C1B93E /* Products */,
@@ -277,6 +306,7 @@
 				B3FF113B1CBFEE0200C1B93E /* Cells */,
 				B3FF11261CBFE1B900C1B93E /* Controllers */,
 				B3FF113E1CBFEE2200C1B93E /* Storyboards */,
+				B3D2667A1CDCA3120040EE95 /* View Models */,
 				B3FF11351CBFE5AE00C1B93E /* Views */,
 			);
 			path = Sources;
@@ -334,6 +364,7 @@
 				B3FF113C1CBFEE1400C1B93E /* DataReadingTableViewCell.swift */,
 				B3FF11751CC0251100C1B93E /* ZoneTableViewCell.swift */,
 				B30E2F471CC4E64B00A4E74C /* LampTableViewCell.swift */,
+				B34552F01CCB965100034F11 /* LampControlTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -350,6 +381,8 @@
 		B3FF113F1CBFF17D00C1B93E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B3D266771CDCA07D0040EE95 /* RxCocoa.framework */,
+				B3D266721CDC94E50040EE95 /* RxSwift.framework */,
 				B3FF117C1CC0D0AE00C1B93E /* Realm.framework */,
 				B3FF117D1CC0D0AE00C1B93E /* RealmSwift.framework */,
 				B3FF11401CBFF19100C1B93E /* CoreCityOS.framework */,
@@ -625,6 +658,7 @@
 				B30E2F191CC4315100A4E74C /* LampLocation.swift in Sources */,
 				B3FF113D1CBFEE1400C1B93E /* DataReadingTableViewCell.swift in Sources */,
 				B3FF112A1CBFE1E700C1B93E /* LampsViewController.swift in Sources */,
+				B34552F11CCB965100034F11 /* LampControlTableViewCell.swift in Sources */,
 				B3FF11301CBFE30A00C1B93E /* Extensions.swift in Sources */,
 				B33F0FD81CCA85700028BDFF /* ManageLampViewController.swift in Sources */,
 				B3FF112C1CBFE1F900C1B93E /* ChartsViewController.swift in Sources */,
@@ -632,7 +666,9 @@
 				B30E2F481CC4E64B00A4E74C /* LampTableViewCell.swift in Sources */,
 				B3E733BE1CC4F60E00E6F442 /* MapViewController.swift in Sources */,
 				B3FF11391CBFE5D600C1B93E /* ErrorView.swift in Sources */,
+				B3D2667F1CDCDE110040EE95 /* ReadingsViewModel.swift in Sources */,
 				B3FF11201CBFDFDB00C1B93E /* AppDelegate.swift in Sources */,
+				B3D2667C1CDCC3DB0040EE95 /* ZonesViewModel.swift in Sources */,
 				B3FF11771CC027E600C1B93E /* ZoneTableViewCell.swift in Sources */,
 				B3FF112E1CBFE20A00C1B93E /* ReadingsViewController.swift in Sources */,
 			);
