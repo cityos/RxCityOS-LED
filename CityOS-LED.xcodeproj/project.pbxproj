@@ -301,9 +301,9 @@
 		B3D2667A1CDCA3120040EE95 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
-				B3D2667B1CDCC3DB0040EE95 /* ZonesViewModel.swift */,
-				B3D2667E1CDCDE110040EE95 /* ReadingsViewModel.swift */,
 				B3D266811CDD19EF0040EE95 /* LampsViewModel.swift */,
+				B3D2667E1CDCDE110040EE95 /* ReadingsViewModel.swift */,
+				B3D2667B1CDCC3DB0040EE95 /* ZonesViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -402,10 +402,10 @@
 			isa = PBXGroup;
 			children = (
 				B3FF113C1CBFEE1400C1B93E /* DataReadingTableViewCell.swift */,
-				B3FF11751CC0251100C1B93E /* ZoneTableViewCell.swift */,
-				B30E2F471CC4E64B00A4E74C /* LampTableViewCell.swift */,
 				B34552F01CCB965100034F11 /* LampControlTableViewCell.swift */,
+				B30E2F471CC4E64B00A4E74C /* LampTableViewCell.swift */,
 				B3D266A11CDE6FD40040EE95 /* ObservableTableViewCell.swift */,
+				B3FF11751CC0251100C1B93E /* ZoneTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";

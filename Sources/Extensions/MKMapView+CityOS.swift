@@ -11,10 +11,12 @@ import UIKit
 
 extension MKMapView {
     
+    /// Expand button this view handles
     var expandButton: UIButton? {
         return subviews.filter { $0.tag == 133 }.first as? UIButton
     }
     
+    /// Adds expand button in bottom right corner of the view
     func addMapExpandButton() {
         let button = UIButton()
         button.tag = 133
@@ -23,8 +25,23 @@ extension MKMapView {
         
         self.addSubview(button)
         var constraints = [NSLayoutConstraint]()
-        constraints.appendContentsOf(NSLayoutConstraint.constraintsWithVisualFormat("H:[expand]-10-|", options: [], metrics: nil, views: ["expand": button]))
-        constraints.appendContentsOf(NSLayoutConstraint.constraintsWithVisualFormat("V:[expand]-10-|", options: [], metrics: nil, views: ["expand": button]))
+        constraints.appendContentsOf(
+            NSLayoutConstraint.constraintsWithVisualFormat(
+                "H:[expand]-10-|",
+                options: [],
+                metrics: nil,
+                views: ["expand": button]
+            )
+        )
+        
+        constraints.appendContentsOf(
+            NSLayoutConstraint.constraintsWithVisualFormat(
+                "V:[expand]-10-|",
+                options: [],
+                metrics: nil,
+                views: ["expand": button]
+            )
+        )
         constraints.activateConstraints()
     }
 }
