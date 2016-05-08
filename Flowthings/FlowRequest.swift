@@ -34,7 +34,6 @@ public class FlowRequest {
         
         request.addValue(token, forHTTPHeaderField: "X-Auth-Token")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        
         return request
     }
 }

@@ -74,6 +74,7 @@ public final class LightFactory {
                 
                 if response.error != nil {
                     observer.on(.Error(response.error!))
+                    observer.on(.Completed)
                 } else {
                     if let data = response.data {
                         do {
@@ -88,6 +89,8 @@ public final class LightFactory {
                 }
             }
             
+            task.resume()
+            
             return AnonymousDisposable {
                 task.cancel()
             }
@@ -95,32 +98,38 @@ public final class LightFactory {
         
     }
     
-    public func retrieveAllLamps() -> Observable<[DeviceType]> {
+    public func retrieveLamps(fromZone zoneID: String? = nil) -> Observable<[DeviceType]> {
         return Observable.create { observer in
-            do {
-                let lamps = try Cache.sharedCache.getLamps()
-                
+            
+            if let zoneID = zoneID {
+                let lamps = Cache.sharedCache.getLamps(forZoneID: zoneID)
                 lamps.subscribe(observer)
-            } catch {
-                observer.on(.Error(error))
+            } else {
+                let lamps = Cache.sharedCache.getLamps()
+                lamps.subscribe(observer)
             }
             
+            
             let request = FlowRequest(flow: Flows.Lamps)
-            request.filter = "limit=100&hints=0&filter=elems.schema IN \(Lamp.validSchemas)"
+            var requestFilterString = "limit=100&hints=0&filter=elems.schema IN \(Lamp.validSchemas)"
+            if let zoneID = zoneID {
+                requestFilterString += " && elems.zoneId == \"\(zoneID)\""
+            }
+            request.filter = requestFilterString
             
             let task = Flowthings.sharedInstance.find(request) {
                 response in
                 
                 if response.error != nil {
                     observer.on(.Error(response.error!))
+                    observer.on(.Completed)
                 } else {
                     if let data = response.data {
                         do {
-                            
                             let lamps = try Serializer.serializeLampDrop(data)
                             Cache.sharedCache.saveLamps(lamps)
                             observer.on(.Next(lamps))
-                            observer.on(.Completed)
+                            
                         } catch {
                             observer.on(.Error(error))
                         }
@@ -130,7 +139,7 @@ public final class LightFactory {
             task.resume()
             
             return AnonymousDisposable {
-                task.cancel()
+//                task.cancel()
             }
         }
         

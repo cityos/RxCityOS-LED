@@ -229,7 +229,7 @@
         <!--Lamps-->
         <scene sceneID="wmc-kv-56U">
             <objects>
-                <viewController id="GKD-YV-T7J" customClass="LampsViewController" customModule="CityOS_LED" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="lampsViewController" id="GKD-YV-T7J" customClass="LampsViewController" customModule="CityOS_LED" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="leg-7h-meA"/>
                         <viewControllerLayoutGuide type="bottom" id="8DV-aX-6Cn"/>
@@ -319,6 +319,59 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MDh-Qp-nEg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1230" y="326"/>
+        </scene>
+        <!--Lamp Details View Controller-->
+        <scene sceneID="Xec-Pv-gov">
+            <objects>
+                <viewController storyboardIdentifier="LampDetailsViewController" id="Z6K-z9-nHn" customClass="LampDetailsViewController" customModule="CityOS_LED" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lMH-l3-Bi8"/>
+                        <viewControllerLayoutGuide type="bottom" id="arb-AO-TRG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Gwc-4p-Kq9">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XLi-Gv-PQm" userLabel="Chart Container View">
+                                <rect key="frame" x="0.0" y="20" width="600" height="200"/>
+                                <color key="backgroundColor" red="0.0" green="0.63921568630000003" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="bBH-ho-X8i"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uvq-H6-Lgq">
+                                <rect key="frame" x="0.0" y="220" width="600" height="380"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="detailCell" id="LtY-Gi-I4u" customClass="ObservableTableViewCell" customModule="CityOS_LED" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LtY-Gi-I4u" id="oyA-e4-bZW">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XLi-Gv-PQm" firstAttribute="top" secondItem="lMH-l3-Bi8" secondAttribute="bottom" id="9YD-dF-LvU"/>
+                            <constraint firstItem="uvq-H6-Lgq" firstAttribute="leading" secondItem="Gwc-4p-Kq9" secondAttribute="leading" id="ENb-3J-Obb"/>
+                            <constraint firstAttribute="trailing" secondItem="XLi-Gv-PQm" secondAttribute="trailing" id="EPn-7w-NYF"/>
+                            <constraint firstItem="uvq-H6-Lgq" firstAttribute="top" secondItem="XLi-Gv-PQm" secondAttribute="bottom" id="Gum-kl-oeD"/>
+                            <constraint firstItem="XLi-Gv-PQm" firstAttribute="leading" secondItem="Gwc-4p-Kq9" secondAttribute="leading" id="H5b-UY-PPf"/>
+                            <constraint firstItem="arb-AO-TRG" firstAttribute="top" secondItem="uvq-H6-Lgq" secondAttribute="bottom" id="hWF-hy-2kY"/>
+                            <constraint firstAttribute="trailing" secondItem="uvq-H6-Lgq" secondAttribute="trailing" id="tFo-0G-L9K"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="uvq-H6-Lgq" id="dN8-wN-BD1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cWc-kx-YCf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1882" y="326"/>
         </scene>
         <!--ManageLampViewController-->
         <scene sceneID="saP-ET-FVG">
@@ -447,7 +500,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1iz-eQ-wkt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1922" y="330"/>
+            <point key="canvasLocation" x="2549" y="326"/>
         </scene>
         <!--Charts-->
         <scene sceneID="lhf-7u-nxa">

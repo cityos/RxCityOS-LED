@@ -96,7 +96,7 @@ public final class Cache {
      
      - returns: Observable<[DeviceType]>
      */
-    public func getLamps() throws -> Observable<[DeviceType]> {
+    public func getLamps() -> Observable<[DeviceType]> {
         return Observable.create { observer in
             var realm: Realm?
             
@@ -104,15 +104,34 @@ public final class Cache {
                 realm = try Realm()
                 let lamps = realm!.objects(RealmLamp)
                 observer.on(.Next(lamps.map {$0 as DeviceType }))
+                observer.on(.Completed)
             } catch {
                 observer.on(.Error(CacheError.RealmError(error)))
             }
             
             return AnonymousDisposable {
-                realm?.cancelWrite()
             }
         }
         
+    }
+    
+    public func getLamps(forZoneID zoneID: String) -> Observable<[DeviceType]> {
+        return Observable.create { observer in
+            var realm: Realm?
+            
+            do {
+                realm = try Realm()
+                let lamps = realm!.objects(RealmLamp).filter { $0.zoneID == zoneID }
+                observer.on(.Next(lamps.map {$0 as DeviceType }))
+                observer.on(.Completed)
+            } catch {
+                observer.on(.Error(CacheError.RealmError(error)))
+            }
+            
+            return AnonymousDisposable {
+                
+            }
+        }
     }
     
     
@@ -143,9 +162,9 @@ public final class Cache {
     public func getZones() throws -> [ZoneType] {
         do {
             let realm = try Realm()
-            let zones = realm.objects(RealmZone).sorted("lastEditTimestamp")
-            //            let lastEdit = zones.sorted("lastEditTimestamp").first?.lastEditTimestamp.value
-            //            print(NSDate(timeIntervalSince1970: lastEdit!))
+            let zones = realm
+                .objects(RealmZone)
+                .sorted("lastEditTimestamp")
             return zones.map { $0 }
         } catch {
             throw error
@@ -153,10 +172,10 @@ public final class Cache {
     }
     
     /**
-        Delete all objects from Realm
+     Delete all objects from Realm
      
-        - throws: `RealmError`
-    */
+     - throws: `RealmError`
+     */
     internal func deleteAll() throws {
         do {
             let realm = try Realm()

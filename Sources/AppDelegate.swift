@@ -9,6 +9,7 @@
 import UIKit
 import RealmSwift
 import LightFactory
+import Cache
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -33,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             tabBarController.selectedIndex = 2
         }
         
-        print(Realm.Configuration.defaultConfiguration.fileURL!)
+//        print(Realm.Configuration.defaultConfiguration.fileURL!)
         
         return true
     }

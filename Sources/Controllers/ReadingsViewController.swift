@@ -16,7 +16,7 @@ class ReadingsTableViewController: UIViewController {
     //MARK: Class variables
     var device: DeviceType?
     
-    let viewModel = ReadingsViewModel()
+    let viewModel = ReadingsViewModel.sharedInstance
     let disposeBag = DisposeBag()
     
     var grandientBackgroundLayer = Gradient.mainGradient()
@@ -27,21 +27,13 @@ class ReadingsTableViewController: UIViewController {
         super.viewDidLoad()
         self.title = "Live Readings"
         
-//        tableView.dataSource = self
-//        tableView.delegate = self
-        tableView.backgroundColor = UIColor.clearColor()
-        tableView.separatorColor = UIColor(white: 1, alpha: 0.6)
-        tableView.rowHeight = 60
-        tableView.alpha = 0
-        
-        setupBackgroundViews()
+        setupTableView()
         addRefreshControl()
         
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        
-        
         viewModel.readings
             .observeOn(MainScheduler.instance)
+            .retry(3)
             .doOnCompleted {
                 completed in
                 UIView.animateWithDuration(0.4) {
@@ -53,7 +45,6 @@ class ReadingsTableViewController: UIViewController {
                 error in
                 print(error)
             }
-            .retry(3)
             .bindTo(tableView.rx_itemsWithCellIdentifier("dataCell",
                 cellType: DataReadingTableViewCell.self)) {
                 row, dataType, cell in
@@ -74,11 +65,16 @@ class ReadingsTableViewController: UIViewController {
 }
 
 extension ReadingsTableViewController {
-    func setupBackgroundViews() {
+    func setupTableView() {
         tableView.tableFooterView = UIView(frame: CGRectZero)
         
         grandientBackgroundLayer.frame = view.bounds
         view.layer.insertSublayer(grandientBackgroundLayer, atIndex: 0)
+        
+        tableView.backgroundColor = UIColor.clearColor()
+        tableView.separatorColor = UIColor(white: 1, alpha: 0.6)
+        tableView.rowHeight = 60
+        tableView.alpha = 0
     }
     
     func addRefreshControl() {

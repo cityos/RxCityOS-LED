@@ -10,8 +10,14 @@ import UIKit
 import CoreCityOS
 
 class ZoneTableViewCell: UITableViewCell {
-
+    
     var zoneData: [LiveDataCollectionType]?
+    
+    var zone: ZoneType? {
+        didSet {
+            zoneNameLabel.text = zone?.name
+        }
+    }
     
     @IBOutlet weak var zoneNameLabel: UILabel!
     

@@ -12,6 +12,7 @@ import LightFactory
 import RxSwift
 
 class ZonesViewModel {
+    
     static var sharedInstance = ZonesViewModel()
     
     var zones: Observable<[ZoneType]>
@@ -19,6 +20,6 @@ class ZonesViewModel {
     
     init() {
         zones = LightFactory.sharedInstance.retrieveZones()
-        lamps = LightFactory.sharedInstance.retrieveAllLamps()
+        lamps = LightFactory.sharedInstance.retrieveLamps()
     }
 }

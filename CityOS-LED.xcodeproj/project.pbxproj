@@ -24,6 +24,15 @@
 		B33F0FB31CC7B5EA0028BDFF /* Cache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B30E2F1F1CC4376500A4E74C /* Cache.framework */; };
 		B33F0FD81CCA85700028BDFF /* ManageLampViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33F0FD71CCA85700028BDFF /* ManageLampViewController.swift */; };
 		B34552F11CCB965100034F11 /* LampControlTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34552F01CCB965100034F11 /* LampControlTableViewCell.swift */; };
+		B35A1DE01CDE9577004E6E6A /* CollectionType+CityOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35A1DDF1CDE9577004E6E6A /* CollectionType+CityOS.swift */; };
+		B35A1DE21CDE958D004E6E6A /* UIView+CityOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35A1DE11CDE958D004E6E6A /* UIView+CityOS.swift */; };
+		B35A1DE41CDE95CD004E6E6A /* UIColor+CityOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35A1DE31CDE95CD004E6E6A /* UIColor+CityOS.swift */; };
+		B35A1DE61CDE95FB004E6E6A /* UIFont+CityOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35A1DE51CDE95FB004E6E6A /* UIFont+CityOS.swift */; };
+		B35A1DE81CDE9644004E6E6A /* UIScrollView+CityOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35A1DE71CDE9644004E6E6A /* UIScrollView+CityOS.swift */; };
+		B35A1DEA1CDE96DF004E6E6A /* MKMapView+CityOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35A1DE91CDE96DF004E6E6A /* MKMapView+CityOS.swift */; };
+		B35A1DEC1CDE9717004E6E6A /* UIStoryboard+CityOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35A1DEB1CDE9717004E6E6A /* UIStoryboard+CityOS.swift */; };
+		B35A1DEE1CDE9749004E6E6A /* UINavigationController+CityOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35A1DED1CDE9749004E6E6A /* UINavigationController+CityOS.swift */; };
+		B35A1DF01CDE976B004E6E6A /* LiveDataType+CityOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35A1DEF1CDE976B004E6E6A /* LiveDataType+CityOS.swift */; };
 		B3D266731CDC94E50040EE95 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D266721CDC94E50040EE95 /* RxSwift.framework */; };
 		B3D266741CDC94E50040EE95 /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B3D266721CDC94E50040EE95 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B3D266751CDC98110040EE95 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D266721CDC94E50040EE95 /* RxSwift.framework */; };
@@ -32,6 +41,9 @@
 		B3D2667C1CDCC3DB0040EE95 /* ZonesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D2667B1CDCC3DB0040EE95 /* ZonesViewModel.swift */; };
 		B3D2667F1CDCDE110040EE95 /* ReadingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D2667E1CDCDE110040EE95 /* ReadingsViewModel.swift */; };
 		B3D266801CDD08FA0040EE95 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D266721CDC94E50040EE95 /* RxSwift.framework */; };
+		B3D266821CDD19EF0040EE95 /* LampsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D266811CDD19EF0040EE95 /* LampsViewModel.swift */; };
+		B3D266A21CDE6FD40040EE95 /* ObservableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D266A11CDE6FD40040EE95 /* ObservableTableViewCell.swift */; };
+		B3D266A41CDE82780040EE95 /* LampDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D266A31CDE82780040EE95 /* LampDetailsViewController.swift */; };
 		B3E733B61CC4EB3F00E6F442 /* Flowthings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FF115D1CBFF27300C1B93E /* Flowthings.framework */; };
 		B3E733B71CC4EB4400E6F442 /* Flowthings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FF115D1CBFF27300C1B93E /* Flowthings.framework */; };
 		B3E733B81CC4EBDA00E6F442 /* Flowthings.h in Headers */ = {isa = PBXBuildFile; fileRef = B3FF115F1CBFF27300C1B93E /* Flowthings.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -45,7 +57,6 @@
 		B3FF112A1CBFE1E700C1B93E /* LampsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FF11291CBFE1E700C1B93E /* LampsViewController.swift */; };
 		B3FF112C1CBFE1F900C1B93E /* ChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FF112B1CBFE1F900C1B93E /* ChartsViewController.swift */; };
 		B3FF112E1CBFE20A00C1B93E /* ReadingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FF112D1CBFE20A00C1B93E /* ReadingsViewController.swift */; };
-		B3FF11301CBFE30A00C1B93E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FF112F1CBFE30A00C1B93E /* Extensions.swift */; };
 		B3FF11341CBFE3D800C1B93E /* Arcon-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3FF11331CBFE37A00C1B93E /* Arcon-Regular.ttf */; };
 		B3FF11371CBFE5CC00C1B93E /* ErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3FF11361CBFE5CC00C1B93E /* ErrorView.xib */; };
 		B3FF11391CBFE5D600C1B93E /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FF11381CBFE5D600C1B93E /* ErrorView.swift */; };
@@ -140,10 +151,22 @@
 		B33F0FB21CC7B5EA0028BDFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B33F0FD71CCA85700028BDFF /* ManageLampViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageLampViewController.swift; sourceTree = "<group>"; };
 		B34552F01CCB965100034F11 /* LampControlTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LampControlTableViewCell.swift; sourceTree = "<group>"; };
+		B35A1DDF1CDE9577004E6E6A /* CollectionType+CityOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CollectionType+CityOS.swift"; sourceTree = "<group>"; };
+		B35A1DE11CDE958D004E6E6A /* UIView+CityOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+CityOS.swift"; sourceTree = "<group>"; };
+		B35A1DE31CDE95CD004E6E6A /* UIColor+CityOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+CityOS.swift"; sourceTree = "<group>"; };
+		B35A1DE51CDE95FB004E6E6A /* UIFont+CityOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+CityOS.swift"; sourceTree = "<group>"; };
+		B35A1DE71CDE9644004E6E6A /* UIScrollView+CityOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+CityOS.swift"; sourceTree = "<group>"; };
+		B35A1DE91CDE96DF004E6E6A /* MKMapView+CityOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MKMapView+CityOS.swift"; sourceTree = "<group>"; };
+		B35A1DEB1CDE9717004E6E6A /* UIStoryboard+CityOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+CityOS.swift"; sourceTree = "<group>"; };
+		B35A1DED1CDE9749004E6E6A /* UINavigationController+CityOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+CityOS.swift"; sourceTree = "<group>"; };
+		B35A1DEF1CDE976B004E6E6A /* LiveDataType+CityOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LiveDataType+CityOS.swift"; sourceTree = "<group>"; };
 		B3D266721CDC94E50040EE95 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		B3D266771CDCA07D0040EE95 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		B3D2667B1CDCC3DB0040EE95 /* ZonesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZonesViewModel.swift; sourceTree = "<group>"; };
 		B3D2667E1CDCDE110040EE95 /* ReadingsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadingsViewModel.swift; sourceTree = "<group>"; };
+		B3D266811CDD19EF0040EE95 /* LampsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LampsViewModel.swift; sourceTree = "<group>"; };
+		B3D266A11CDE6FD40040EE95 /* ObservableTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableTableViewCell.swift; sourceTree = "<group>"; };
+		B3D266A31CDE82780040EE95 /* LampDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LampDetailsViewController.swift; sourceTree = "<group>"; };
 		B3E733BD1CC4F60E00E6F442 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		B3FF11021CBFDFC600C1B93E /* CityOS-LED.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CityOS-LED.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3FF11181CBFDFDB00C1B93E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -155,7 +178,6 @@
 		B3FF11291CBFE1E700C1B93E /* LampsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LampsViewController.swift; sourceTree = "<group>"; };
 		B3FF112B1CBFE1F900C1B93E /* ChartsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartsViewController.swift; sourceTree = "<group>"; };
 		B3FF112D1CBFE20A00C1B93E /* ReadingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadingsViewController.swift; sourceTree = "<group>"; };
-		B3FF112F1CBFE30A00C1B93E /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		B3FF11331CBFE37A00C1B93E /* Arcon-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Arcon-Regular.ttf"; sourceTree = "<group>"; };
 		B3FF11361CBFE5CC00C1B93E /* ErrorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ErrorView.xib; sourceTree = "<group>"; };
 		B3FF11381CBFE5D600C1B93E /* ErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
@@ -260,11 +282,28 @@
 			path = "Cache Tests";
 			sourceTree = "<group>";
 		};
+		B35A1DDE1CDE9565004E6E6A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B35A1DDF1CDE9577004E6E6A /* CollectionType+CityOS.swift */,
+				B35A1DE91CDE96DF004E6E6A /* MKMapView+CityOS.swift */,
+				B35A1DE31CDE95CD004E6E6A /* UIColor+CityOS.swift */,
+				B35A1DE51CDE95FB004E6E6A /* UIFont+CityOS.swift */,
+				B35A1DED1CDE9749004E6E6A /* UINavigationController+CityOS.swift */,
+				B35A1DE71CDE9644004E6E6A /* UIScrollView+CityOS.swift */,
+				B35A1DEB1CDE9717004E6E6A /* UIStoryboard+CityOS.swift */,
+				B35A1DE11CDE958D004E6E6A /* UIView+CityOS.swift */,
+				B35A1DEF1CDE976B004E6E6A /* LiveDataType+CityOS.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		B3D2667A1CDCA3120040EE95 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
 				B3D2667B1CDCC3DB0040EE95 /* ZonesViewModel.swift */,
 				B3D2667E1CDCDE110040EE95 /* ReadingsViewModel.swift */,
+				B3D266811CDD19EF0040EE95 /* LampsViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -300,11 +339,11 @@
 			children = (
 				B3FF111E1CBFDFDB00C1B93E /* Info.plist */,
 				B3FF11181CBFDFDB00C1B93E /* AppDelegate.swift */,
-				B3FF112F1CBFE30A00C1B93E /* Extensions.swift */,
 				B30E2F181CC4315100A4E74C /* LampLocation.swift */,
 				B3FF11191CBFDFDB00C1B93E /* Assets.xcassets */,
 				B3FF113B1CBFEE0200C1B93E /* Cells */,
 				B3FF11261CBFE1B900C1B93E /* Controllers */,
+				B35A1DDE1CDE9565004E6E6A /* Extensions */,
 				B3FF113E1CBFEE2200C1B93E /* Storyboards */,
 				B3D2667A1CDCA3120040EE95 /* View Models */,
 				B3FF11351CBFE5AE00C1B93E /* Views */,
@@ -315,12 +354,13 @@
 		B3FF11261CBFE1B900C1B93E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B3FF11271CBFE1D200C1B93E /* ZonesTableViewController.swift */,
-				B3FF11291CBFE1E700C1B93E /* LampsViewController.swift */,
 				B3FF112B1CBFE1F900C1B93E /* ChartsViewController.swift */,
-				B3FF112D1CBFE20A00C1B93E /* ReadingsViewController.swift */,
-				B3E733BD1CC4F60E00E6F442 /* MapViewController.swift */,
+				B3D266A31CDE82780040EE95 /* LampDetailsViewController.swift */,
+				B3FF11291CBFE1E700C1B93E /* LampsViewController.swift */,
 				B33F0FD71CCA85700028BDFF /* ManageLampViewController.swift */,
+				B3E733BD1CC4F60E00E6F442 /* MapViewController.swift */,
+				B3FF112D1CBFE20A00C1B93E /* ReadingsViewController.swift */,
+				B3FF11271CBFE1D200C1B93E /* ZonesTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -365,6 +405,7 @@
 				B3FF11751CC0251100C1B93E /* ZoneTableViewCell.swift */,
 				B30E2F471CC4E64B00A4E74C /* LampTableViewCell.swift */,
 				B34552F01CCB965100034F11 /* LampControlTableViewCell.swift */,
+				B3D266A11CDE6FD40040EE95 /* ObservableTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -657,20 +698,31 @@
 			files = (
 				B30E2F191CC4315100A4E74C /* LampLocation.swift in Sources */,
 				B3FF113D1CBFEE1400C1B93E /* DataReadingTableViewCell.swift in Sources */,
+				B35A1DE21CDE958D004E6E6A /* UIView+CityOS.swift in Sources */,
 				B3FF112A1CBFE1E700C1B93E /* LampsViewController.swift in Sources */,
 				B34552F11CCB965100034F11 /* LampControlTableViewCell.swift in Sources */,
-				B3FF11301CBFE30A00C1B93E /* Extensions.swift in Sources */,
 				B33F0FD81CCA85700028BDFF /* ManageLampViewController.swift in Sources */,
 				B3FF112C1CBFE1F900C1B93E /* ChartsViewController.swift in Sources */,
 				B3FF11281CBFE1D200C1B93E /* ZonesTableViewController.swift in Sources */,
 				B30E2F481CC4E64B00A4E74C /* LampTableViewCell.swift in Sources */,
+				B35A1DF01CDE976B004E6E6A /* LiveDataType+CityOS.swift in Sources */,
 				B3E733BE1CC4F60E00E6F442 /* MapViewController.swift in Sources */,
 				B3FF11391CBFE5D600C1B93E /* ErrorView.swift in Sources */,
+				B35A1DEA1CDE96DF004E6E6A /* MKMapView+CityOS.swift in Sources */,
 				B3D2667F1CDCDE110040EE95 /* ReadingsViewModel.swift in Sources */,
+				B3D266A21CDE6FD40040EE95 /* ObservableTableViewCell.swift in Sources */,
 				B3FF11201CBFDFDB00C1B93E /* AppDelegate.swift in Sources */,
+				B35A1DE01CDE9577004E6E6A /* CollectionType+CityOS.swift in Sources */,
 				B3D2667C1CDCC3DB0040EE95 /* ZonesViewModel.swift in Sources */,
 				B3FF11771CC027E600C1B93E /* ZoneTableViewCell.swift in Sources */,
+				B35A1DE81CDE9644004E6E6A /* UIScrollView+CityOS.swift in Sources */,
+				B35A1DE61CDE95FB004E6E6A /* UIFont+CityOS.swift in Sources */,
 				B3FF112E1CBFE20A00C1B93E /* ReadingsViewController.swift in Sources */,
+				B3D266821CDD19EF0040EE95 /* LampsViewModel.swift in Sources */,
+				B35A1DEC1CDE9717004E6E6A /* UIStoryboard+CityOS.swift in Sources */,
+				B35A1DEE1CDE9749004E6E6A /* UINavigationController+CityOS.swift in Sources */,
+				B35A1DE41CDE95CD004E6E6A /* UIColor+CityOS.swift in Sources */,
+				B3D266A41CDE82780040EE95 /* LampDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

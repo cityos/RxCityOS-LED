@@ -12,6 +12,9 @@ import LightFactory
 import RxSwift
 
 class ReadingsViewModel {
+    
+    static let sharedInstance = ReadingsViewModel()
+    
     let readings: Observable<[LiveDataType]>
     
     init() {

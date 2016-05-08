@@ -21,22 +21,23 @@ class LampsViewController: UIViewController {
     //MARK: Class properties
     var zoneID: String?
     var lamps: [DeviceType]?
+    var viewModel: LampsViewModel!
     
     let disposeBag = DisposeBag()
     
     //MARK: - View delegate methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel = LampsViewModel(zoneID: zoneID)
         
         mapView.addMapExpandButton()
         mapView.expandButton?.enabled = false
         mapView.delegate = self
         
         tableView.dataSource = self
-        tableView.delegate = self
         tableView.tableFooterView = UIView(frame: CGRect.zero)
         
-        LightFactory.sharedInstance.retrieveAllLamps()
+        viewModel.lamps
             .subscribe { [weak self] event in
                 if let lamps = event.element {
                     dispatch_async(dispatch_get_main_queue()) {
@@ -52,6 +53,12 @@ class LampsViewController: UIViewController {
                 }
             }.addDisposableTo(disposeBag)
         
+        tableView.rx_itemSelected.subscribeNext {
+            indexPath in
+            let detailsController = self.storyboard!.initiateViewController(LampDetailsViewController)
+            self.showViewController(detailsController, sender: self)
+            }.addDisposableTo(disposeBag)
+        
         mapView.expandButton?.addTarget(
             self,
             action: #selector(didTapOnMapExpandButton(_:)),
@@ -64,6 +71,12 @@ class LampsViewController: UIViewController {
         if let currentIndexPath = tableView.indexPathForSelectedRow {
             tableView.deselectRowAtIndexPath(currentIndexPath, animated: true)
         }
+        mapView.delegate = self
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        mapView.delegate = nil
     }
     
     override func didReceiveMemoryWarning() {
@@ -93,15 +106,6 @@ extension LampsViewController: UITableViewDataSource {
         cell.zoneNameLabel.text = ""
         
         return cell
-    }
-}
-
-//MARK: - UITableViewDelegate implementation
-extension LampsViewController: UITableViewDelegate {
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let manageController = storyboard!.instantiateViewControllerWithIdentifier("manageLampController") as! ManageLampViewController
-        manageController.lamp = lamps![indexPath.row]
-        self.showViewController(manageController, sender: self)
     }
 }
 
