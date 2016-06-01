@@ -86,13 +86,14 @@ class ManageLampViewController: UIViewController {
             .throttle(1)
             .asObservable()
             .map { Int(round($0)) }
+            .share()
             .subscribeNext { print($0) }
             .addDisposableTo(disposeBag)
         
          Observable
             .just(controls.map { $0 })
             .bindTo(tableView.rx_itemsWithCellIdentifier("manageLampCell",
-                cellType: LampControlTableViewCell.self)) { row, controlItem, cell in
+                cellType: LampControlTableViewCell.self)) { row,controlItem, cell in
                 cell.controlItem = controlItem
                 
                 if controlItem == .Name {

@@ -37,7 +37,8 @@ class LampsViewController: UIViewController {
         tableView.dataSource = self
         tableView.tableFooterView = UIView(frame: CGRect.zero)
         
-        viewModel.lamps
+        viewModel
+            .lamps
             .subscribe { [weak self] event in
                 if let lamps = event.element {
                     dispatch_async(dispatch_get_main_queue()) {
@@ -53,11 +54,14 @@ class LampsViewController: UIViewController {
                 }
             }.addDisposableTo(disposeBag)
         
-        tableView.rx_itemSelected.subscribeNext {
+        tableView.rx_itemSelected
+            .subscribeNext {
             indexPath in
             let detailsController = self.storyboard!.initiateViewController(LampDetailsViewController)
+            detailsController.lamp = self.lamps![indexPath.row]
             self.showViewController(detailsController, sender: self)
             }.addDisposableTo(disposeBag)
+        
         
         mapView.expandButton?.addTarget(
             self,

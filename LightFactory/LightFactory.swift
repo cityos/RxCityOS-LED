@@ -20,16 +20,24 @@ public final class LightFactory {
     public static var sharedInstance = LightFactory()
     
     /// Retrieves data from in flow
-    public func retrieveLatestLampData(limit limit: UInt) -> Observable<[DeviceType]> {
+    public func retrieveLatestLampData(limit limit: UInt, lampID: String? = nil) -> Observable<[DeviceType]> {
         let request = FlowRequest(flow: Flows.In)
-        request.filter = "limit=\(limit)&hints=0"
+        var filterString = "limit=\(limit)&hints=0"
+        
+        if let lampID = lampID {
+            filterString += "&filter=elems.0==\"\(lampID)\""
+        }
+        
+        request.filter = filterString
         
         return Observable.create { observer in
             let task = Flowthings.sharedInstance.find(request) {
                 response in
-                
+               
                 if response.error != nil {
+                    print(response.error)
                     observer.on(.Error(response.error!))
+                    observer.on(.Completed)
                 } else {
                     if let data = response.data {
                         do {
@@ -48,7 +56,7 @@ public final class LightFactory {
             task.resume()
             
             return AnonymousDisposable {
-                task.cancel()
+//                task.cancel()
             }
         }
         

@@ -7,43 +7,36 @@
 //
 
 import UIKit
+import CoreCityOS
+import RxSwift
 
 class LampDetailsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    var lamp: DeviceType!
+    var viewModel: LampDetailsViewModel!
+    var disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        assert(lamp != nil, "Lamp property not set")
+        assert(lamp.deviceData.deviceID != "", "set lamp id")
+        viewModel = LampDetailsViewModel(lamp: lamp)
         
-        tableView.dataSource = self
-        tableView.rowHeight = 60
+        viewModel.lampData.debug("details lamp probe")
+            .bindTo(tableView.rx_itemsWithCellIdentifier("detailCell", cellType: ObservableTableViewCell.self)) {
+                index, data, cell in
+                cell.viewModel.title = data.type.dataIdentifier
+                cell.viewModel.image = data.blueIcon
+                cell.viewModel.rightTitle = "\(data.currentDataPoint?.value ?? 0.0)"
+                
+        }.addDisposableTo(disposeBag)
+//        tableView.rowHeight = 60
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-}
-
-extension LampDetailsViewController: UITableViewDataSource {
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 10
-    }
-    
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("detailCell", forIndexPath: indexPath) as! ObservableTableViewCell
-        cell.cellFont = UIFont.mainFont()
-        cell.viewModel.title = "Test Cell"
-        cell.viewModel.rightTitle = "Some Title"
-        cell.viewModel.rightSubtitle = "Subtitle"
-        cell.commonInit()
-        return cell
     }
 }

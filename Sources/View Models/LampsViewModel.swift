@@ -17,6 +17,8 @@ class LampsViewModel {
     
     init(zoneID: String? = nil) {
         self.zoneID = zoneID
-        lamps = LightFactory.sharedInstance.retrieveLamps(fromZone: zoneID)
+        lamps = LightFactory
+            .sharedInstance
+            .retrieveLamps(fromZone: zoneID)
     }
 }

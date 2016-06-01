@@ -31,6 +31,8 @@ class ReadingsTableViewController: UIViewController {
         addRefreshControl()
         
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        
+        
         viewModel.readings
             .observeOn(MainScheduler.instance)
             .retry(3)
@@ -45,10 +47,11 @@ class ReadingsTableViewController: UIViewController {
                 error in
                 print(error)
             }
-            .bindTo(tableView.rx_itemsWithCellIdentifier("dataCell",
+            .bindTo(
+                tableView.rx_itemsWithCellIdentifier("dataCell",
                 cellType: DataReadingTableViewCell.self)) {
                 row, dataType, cell in
-                cell.dataType = dataType
+                    cell.dataType = dataType
             }
             .addDisposableTo(disposeBag)
     }

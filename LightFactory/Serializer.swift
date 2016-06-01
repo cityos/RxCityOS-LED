@@ -61,6 +61,7 @@ class Serializer {
             guard let elems = body[i]["elems"] as? [String: AnyObject] else {
                 throw SerializerError.InvalidDataParsed(message: "Couldn't parse elems")
             }
+            
             let lampID = elems["0"] as! String
             let schemaID = elems["12"] as! String
             

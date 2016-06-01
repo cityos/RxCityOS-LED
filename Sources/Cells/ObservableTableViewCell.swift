@@ -59,7 +59,7 @@ public class ObservableTableViewCell: UITableViewCell {
     
     //MARK: - Properties
     lazy var viewModel: ObservableCellViewModelType = ObservableCellViewModel()
-    var cellFont: UIFont?
+    var fontFamily: String?
     
     //MARK: - Helper methods
     
@@ -76,6 +76,7 @@ public class ObservableTableViewCell: UITableViewCell {
         trailingStackView.axis = .Vertical
         trailingStackView.alignment = .Fill
         trailingStackView.distribution = .FillEqually
+        
     }
     
     func addSubviews() {
@@ -137,9 +138,15 @@ public class ObservableTableViewCell: UITableViewCell {
     }
     
     func customizeViews() {
-        for label in [leadingLabel, leadingSubtitleLabel, trailingLabel, trailingSubtitleLabel] {
-            label.font = cellFont
+        if let fontFamily = fontFamily {
+            leadingLabel.font = UIFont(name: fontFamily, size: 17)
+            leadingSubtitleLabel.font = UIFont(name: fontFamily, size: 14)
+            trailingLabel.font = UIFont(name: fontFamily, size: 17)
+            trailingSubtitleLabel.font = UIFont(name: fontFamily, size: 14)
         }
+        
+        leadingSubtitleLabel.textAlignment = .Left
+        trailingSubtitleLabel.textAlignment = .Right
     }
     
     //MARK: - Init methods
